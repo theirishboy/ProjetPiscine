@@ -19,10 +19,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="Page d'acceuil.html">Home</a></li>
+        <li class="active"><a href="Acceuil.php">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>
+        <li><a href="Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>
       </ul>
     </div>
   </div>

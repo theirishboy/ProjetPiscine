@@ -35,9 +35,9 @@
   </div>
   <div class="row">
     <div class="col-lg-10">
-      <p><a href="index.html">Ferraille ou Trésor</a> |
-      <a href="annonces.html">Bon pour le musée</a> | 
-      <a href="financing.html">Accessoire VIP</a> </p>
+      <p><a href="Ferraille.php" name="categorie" value="ferraille">Ferraille ou Trésor</a> |
+      <a href="annonces.html" name="categorie" value="musee">Bon pour le musée</a> | 
+      <a href="financing.html" name="categorie" value="accessoire">Accessoire VIP</a> </p>
     </div>
   </div>
 </div>
@@ -84,7 +84,7 @@
 
   <div class="col-xs-6 col-md-4">
     <div class="thumbnail">
-      <a href="CavalierBronze.jpg" title="">
+      <a href="Images/CavalierBronze.jpg" title="Cavalier">
           <img src="Images/CavalierBronze.jpg" class="thumbnail" alt="Cavalier" height="250" width="140">
       </a>
       <div class="caption">
@@ -97,7 +97,7 @@
 
   <div class="col-xs-6 col-md-4">
     <div class="thumbnail">
-      <a href="VaseAsie.jpg" title="">
+      <a href="Images/VaseAsie.jpg" title="Vase1">
           <img src="Images/VaseAsie.jpg" class="thumbnail" alt="Vase1" height="230" width="135">
       </a>
       <div class="caption">
@@ -110,7 +110,7 @@
 
   <div class="col-xs-6 col-md-4">
     <div class="thumbnail">
-      <a href="tableau1.jpg" title="">
+      <a href="Images/tableau1.jpg" title="Tableau1">
           <img src="Images/tableau1.jpg" class="thumbnail" alt="Tableau1" height="550" width="300">
       </a>
       <div class="caption">
