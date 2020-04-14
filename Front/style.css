@@ -1,0 +1,88 @@
+.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background:rgb(49,49,49);
+}
+
+body {   
+    padding: 0px;   
+    margin: 0px;   
+    background: rgba(64,128,128,0.3); 
+}
+
+#catégories{
+    font-family: impact, fantasy;
+    font-size-adjust: 2;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+}
+
+#barre_recherche {
+    width: 210px;
+    position: relative;
+}
+
+#texte_recherche {
+    width: 198px;
+    padding: 10px 50px 20px 10px;
+    background-color: rgba(0,0,0,0.6);
+    border: solid 1px rgba(0,0,0,0.6);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    font-family: arial, verdana, sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+#texte_recherche:focus {
+    background-color: rgba(0,0,0,0.8);
+    outline: 0 none;
+    color: white;
+}
+
+#bouton {
+    margin-top: -16px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+
+.thumbnail {
+    background-color: rgb(127,127,127);
+}
+    
+    /* Add a gray background color and some padding to the footer */
+footer {
+    background-color: rgb(49,49,49);
+    color: white; 
+    padding: 25px;
+}
+    
+.carousel-inner img {
+    width: 40%; /* Set width to 100% */
+    margin: auto;
+    max-height:250px;
+}
+
+/*les flèches*/
+  .carousel-control.right, .carousel-control.left {
+  background-image: none;
+  color: rgb(43, 124, 125);
+}
+
+/*inicateur de l'image active*/
+.carousel-indicators li.active {
+  background-color: rgb(43, 124, 125);
+}
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
