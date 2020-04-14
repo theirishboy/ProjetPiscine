@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="Connexion.css">
+  <link rel="stylesheet" type="text/css" href="CreateAccount.css">
   <link href="Images/Logo_EbayECE.ico" rel="icon" type="images/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -20,11 +20,12 @@
 
 <! -- http://www.codeurjava.com/2016/12/formulaire-de-login-avec-html-css-php-et-mysql.html -->
 <div id="fenetre">       
-  <form>
-    <div action="verification.php" method="POST">
+  <form action="Connexion.php" method="POST">
+    <div id="Coordo">
       <h5 class="text-center">Vous êtes nouveau !</h5>
       <h2 class="text-center">Créer votre compte</h2><br>
-                
+      
+      <label><h4><b>Coordonnées du compte</b></h4></label> <br>          
       <label><b>Prénom</b></label>
       <input type="text" placeholder="Prénom" name="Prenom" required>
 
@@ -43,22 +44,15 @@
       <label><b>Confirmation du mot de passe</b></label>
       <input type="password" placeholder="Confirmation du mot de passe" name="mdp" required>
 
-      <tr>
-        <td><label><b>Statut :</b></label></td>
-        <td><td>
-            <input type="radio" name="statut" value="Acheteur">
-            <label for="economie">Acheteur</label></br>
-            <input type="radio" name="statut" value="Vendeur">
-            <label for="affaire">Vendeur</label></br>
-          </td></td>
-      </tr><br>
+      <! -- Informmations propores au client -->
 
+      <br><br>
       <label><h4><b>Coordonnées de livraison</b></h4></label> <br>
       <label><b>Adresse 1</b></label>
       <input type="text" placeholder="Adresse 1" name="AdresseL1" required>
 
       <label><b>Adresse 2</b></label>
-      <input type="text" placeholder="Adresse 2" name="AdresseL2" required>
+      <input type="text" placeholder="Adresse 2" name="AdresseL2">
 
       <label><b>Ville</b></label>
       <input type="text" placeholder="Ville" name="Ville" required>
@@ -77,15 +71,15 @@
       <label><b>Type de carte</b></label>
       <input type="text" placeholder="Type de carte" name="Type_Carte" required>
       <tr>
-        <td>Statut du client :</td>
-        <td><SELECT size="1" name="statut">
+        <td><label><b>Statut du client  </b></label></td>
+        <td><SELECT size="1" name="statut" required="required">
           <OPTION>Visa
           <OPTION>MasterCard
           <OPTION>American Express
           <OPTION>PayPal
           </SELECT> 
         </td>
-      </tr>
+      </tr><br><br>
 
       <label><b>N° de carte</b></label>
       <input type="text" placeholder="N° de carte" name="N_Carte" required>
@@ -99,7 +93,16 @@
       <label><b>Code de sécurité</b></label>
       <input type="password" placeholder="Code de sécurité" name="Code" required>
 
-      <input type="submit" id='submit' value='Créer le compte'><br><br>
+      <div>
+        <input type="checkbox" id="Conditions" required="required">
+        <label for="subscribeNews">En créant un compte vous accepter les <u>Conditions générales</u> et <u>Politique de confidentialité</u> de Ebay ECE.</label>
+      </div>
+      <div>
+        <input type="checkbox" id="Conditions" required="required">
+        <label for="subscribeNews">En créant un compte vous accepter la clause disant au client que s'il/elle fait une offre sur un article, il/elle est sous contrat légal pour l'acheter si le vendeur accepte l'offre.</label>
+      </div>
+      
+      <input type="submit" id='submit' value='Créer le compte client'><br><br>
 
       <?php
       if(isset($_GET['erreur'])){
@@ -109,10 +112,6 @@
       }
       ?>
 
-    </div>
-
-    <div>
-    <a href="ferraille.php" type="submit" id="CreateAccount">Créer un compte</a>
     </div>
 
   </form>

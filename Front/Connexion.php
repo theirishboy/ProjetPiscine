@@ -43,9 +43,12 @@
       ?>
 
     </div>
-
+    <br>
+    <h5 class="text-center">_____________________________________________</h5>
+    <h5 class="text-center">Vous êtes nouveau ?</h5><br>
     <div>
-    <a href="ferraille.php" type="submit" id="CreateAccount">Créer un compte</a>
+    <a href="CreateAccountVendeur.php" type="submit" id="CreateAccount">Créer un compte vendeur</a>
+    <a href="CreateAccountClient.php" type="submit" id="CreateAccount">Créer un compte client</a>
     </div>
 
   </form>

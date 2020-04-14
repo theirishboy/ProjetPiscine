@@ -15,11 +15,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">Ebay ECE</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="Acceuil.php">Home</a></li>
+        <li class="active"><a href="Acceuil.php">
+          <img src="Images/home.png" height="22"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../Back/Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>
