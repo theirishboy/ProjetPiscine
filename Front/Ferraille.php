@@ -18,67 +18,6 @@
     include("nav.php");
 ?>
 
-<div class="container">    
-  <div class="row">       
-    <div  id="catégories"class="col-lg-2">
-      <p><br>Catégories</p>
-    </div>
-    <div class="col-lg-offset-9 col-lg-1">
-      <form>
-        <br>
-        <div id="barre_recherche">
-          <input id="texte_recherche" type="text" value="Rechercher" />
-          <input id="bouton" type="image" src="Images/recherche.png" height="25" alt="Rechercher" />
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-10">
-      <p><a href="index.html">Ferraille ou Trésor</a> |
-      <a href="annonces.html">Bon pour le musée</a> | 
-      <a href="financing.html">Accessoire VIP</a> </p>
-    </div>
-  </div>
-</div>
-
-<div class="container text-center">    
-  <h2>Promotions exceptionnelles</h2><br></div>
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="Images/VaseAsie.jpg" alt="Vase1">
-        <div class="carousel-caption">
-          <h2>Economisez 100 € !</h2>
-        </div>      
-      </div>
-
-      <div class="item">
-        <img src="Images/tableau1.jpg" alt="Tableau1">
-        <div class="carousel-caption">
-          <h2>-5%</h2>
-        </div>      
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-  
 <div class="container text-center">  
   <br><h2>Articles du jour</h2><br>
 
@@ -122,6 +61,7 @@
   </div>
 
 </div><br>
+
 
 <?php
     include("footer.php");

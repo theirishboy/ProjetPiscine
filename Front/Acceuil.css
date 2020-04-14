@@ -1,9 +1,3 @@
-.navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      background:rgb(49,49,49);
-}
-
 body {   
     padding: 0px;   
     margin: 0px;   
@@ -54,13 +48,6 @@ input {
 
 .thumbnail {
     background-color: rgb(127,127,127);
-}
-    
-    /* Add a gray background color and some padding to the footer */
-footer {
-    background-color: rgb(49,49,49);
-    color: white; 
-    padding: 25px;
 }
     
 .carousel-inner img {
