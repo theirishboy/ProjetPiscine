@@ -22,7 +22,7 @@
         <li class="active"><a href="Acceuil.php">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>
+        <li><a href="../Back/Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>
       </ul>
     </div>
   </div>

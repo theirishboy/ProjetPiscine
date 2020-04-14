@@ -2,11 +2,17 @@
 function listobjet($categorie)
 {
 	$result = connection("SELECT * FROM `objet d'art` WHERE `objet d'art`.`categorie` = '$categorie'");
+<<<<<<< HEAD
 	$a = 0;//nb de colonne
 	$b=0;
 	while($data = mysqli_fetch_assoc($result))
 	{
 		
+=======
+	$a = 0;
+	while($data = mysqli_fetch_assoc($result))
+	{
+>>>>>>> master
 		if($a % 3 == 0)
 		{
 			echo '<div class="row">';
@@ -24,12 +30,16 @@ function listobjet($categorie)
 		echo ' </div>';
 		echo ' </div>';
 		echo ' </div>';
+<<<<<<< HEAD
 
 		$b = $a+1;
+=======
+>>>>>>> master
 		if($a % 3 == 2)
 		{
 			echo '</div>';
 		}
+<<<<<<< HEAD
 
 		if($b== mysqli_num_rows($result)){
 			if($a % 3 == 0 || $a % 3 == 1){
@@ -39,6 +49,8 @@ function listobjet($categorie)
 		}
 		}
 
+=======
+>>>>>>> master
 		$a+=1;
 	}
 }
