@@ -1,0 +1,21 @@
+body {   
+    padding: 0px;   
+    margin: 0px;   
+    background: rgba(64,128,128,0.3); 
+}
+
+/* Fenetre*/
+#fenetre{
+    width:450px;
+    margin:0 auto;
+    margin-top:10%;
+}
+
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+}
