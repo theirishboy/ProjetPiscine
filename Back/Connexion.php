@@ -4,10 +4,9 @@ include("ConnexionServeur.php");
 
 $login = isset($_POST["login"])? $_POST["login"] : "";
 $mdp = isset($_POST["mdp"])? $_POST["mdp"] : ""; 
-$sql = "SELECT * FROM `humain` WHERE `humain`.`Nom` = 'Perrin'"; 
 
-$login="leroux";
-$mdp="motdepasse";
+
+$statut="";
     // mauvais couple id/mdp}
 
 $testmotdepasse = "SELECT ID FROM `humain` WHERE `humain`.`Mot_de_passe`=PASSWORD('$mdp') 
@@ -19,35 +18,40 @@ $data = mysqli_fetch_assoc($Tmdp);
 if (mysqli_num_rows($Tmdp)==0)
 {
 	echo "mauvais mdp";
+	header("Location: ../Front/Connexion.php");
 }
+
 else
 {
-	echo "bon mdp";
-}
-$req = "SELECT * FROM `vendeur`";
-$result = connection($req); 
-$data2 = mysqli_fetch_assoc($result);
+	echo "oui";
+	$req = "SELECT * FROM `vendeur`";
+	$result = connection($req); 
+	$data2 = mysqli_fetch_assoc($result);
 
-if($data['ID'] == $data2['Humain'])
-{
+	if($data['ID'] == $data2['Humain'])
+	{
+		$statut= "vendeur";
+	}
+	$req = "SELECT * FROM `client`";
+	$result = connection($req); 
+	$data2 = mysqli_fetch_assoc($result);
+	if($data['ID'] == $data2['Humain'])
+	{
 
-	echo "vendeur";
-}
-$req = "SELECT * FROM `client`";
-$result = connection($req); 
-$data2 = mysqli_fetch_assoc($result);
-if($data['ID'] == $data2['Humain'])
-{
+		$statut= "client";
+	}
+	$req = "SELECT * FROM `admin`";
+	$result = connection($req); 
+	$data2 = mysqli_fetch_assoc($result);
+	if($data['ID'] == $data2['Humain'])
+	{
 
-	echo "client";
+		$statut= "admin";
+	}
+	setcookie('login',$login);
+	setcookie('mdp',$mdp);
+	setcookie('statut',$statut);
+	header("Location: ../Front/Acceuil.php");
 }
-$req = "SELECT * FROM `admin`";
-$result = connection($req); 
-$data2 = mysqli_fetch_assoc($result);
-if($data['ID'] == $data2['Humain'])
-{
 
-	echo "admin";
-}
-	
 ?>

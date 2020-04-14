@@ -20,14 +20,14 @@
 
 <! -- http://www.codeurjava.com/2016/12/formulaire-de-login-avec-html-css-php-et-mysql.html -->
 <div id="fenetre">       
-  <form>
-    <div action="verification.php" method="POST">
+  <form action="../Back/Connexion.php" method="POST">
+    <div >
       <h2 class="text-center">
       <img class="align-center" src="Images/IconeLogin.png" height="75">
       <br>CONNECTEZ-VOUS</h2><br>
                 
       <label><b>Identifiant</b></label>
-      <input type="text" placeholder="Entrer votre identifiant" name="Identifiant" required>
+      <input type="text" placeholder="Entrer votre identifiant" name="login" required>
 
       <label><b>Mot de passe</b></label>
       <input type="password" placeholder="Entrer le mot de passe" name="mdp" required><br><br>
