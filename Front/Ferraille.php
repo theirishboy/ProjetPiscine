@@ -23,7 +23,7 @@
 <div class="row">
   <div class="col-md-4">
     <div class="thumbnail">
-      <a href="Images/Pieces1.png" title="">
+      <a href="Item.php" title="">
           <img classe ="image" src="Images/Pieces1.png" class="thumbnail" alt="Pieces1">
       </a>
       <div class="caption">
@@ -42,7 +42,8 @@
       <div class="caption">
          <p>Médaille circulaire en bronze figurant Raspail "L'ami du peuple" de profil. Diamètre : 14 cm.</p>
          <p>Catégorie : Ferraille ou Trésor</p>
-         <p>Prix : 15 €</p>
+         <p>Prix : 15 €</p><br>
+         <a href="Item.php" type="submit" id="CreateAccount">Voir l'item</a><br><br>
      </div>
     </div>
   </div>

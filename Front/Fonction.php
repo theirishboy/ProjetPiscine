@@ -1,12 +1,11 @@
 <?php 
 function listobjet($categorie)
 {
-	$result = connection("SELECT * FROM `objet d'art` WHERE `objet d'art`.`categorie` = '$categorie'");
+	$result = connection("SELECT * FROM `objet art` WHERE `objet art`.`categorie` = '$categorie'");
 	$a = 0;//nb de colonne
 	$b=0;
 	while($data = mysqli_fetch_assoc($result))
 	{
-		
 		if($a % 3 == 0)
 		{
 			echo '<div class="row">';
@@ -20,11 +19,11 @@ function listobjet($categorie)
 		echo '<p>'.$data['Nom'].'</p>';
 		echo '<p>'.$data['Description'].'</p>';
 		echo '<p>Catégorie : '.$data['Categorie'].'</p>';
-		echo ' <p>Prix : '.$data['Prix'].'€</p>';
+		echo ' <p>Prix : '.$data['Prix'].'€</p><br>';
+		echo '<a href="Itemessai.php?ID='.$data['ID'].'" id="VoirItem">Voir Item</a>';
+		echo ' <br><br></div>';
 		echo ' </div>';
 		echo ' </div>';
-		echo ' </div>';
-
 		$b = $a+1;
 		if($a % 3 == 2)
 		{
