@@ -20,7 +20,7 @@ function listobjet($categorie)
 		echo '<p>'.$data['Description'].'</p>';
 		echo '<p>Catégorie : '.$data['Categorie'].'</p>';
 		echo ' <p>Prix : '.$data['Prix'].'€</p><br>';
-		echo '<a href="Itemessai.php?ID='.$data['ID'].'" id="VoirItem">Voir Item</a>';
+		echo '<a href="Item.php?ID='.$data['ID'].'" id="VoirItem">Voir Item</a>';
 		echo ' <br><br></div>';
 		echo ' </div>';
 		echo ' </div>';
