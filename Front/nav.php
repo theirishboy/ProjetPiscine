@@ -5,9 +5,12 @@
       background:rgb(49,49,49);
 }
 
+.dropdown-menu{
+  background-color: grey;
+}
+
 }
 </style>
-
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -20,12 +23,27 @@
       <a class="navbar-brand" href="#">Ebay ECE</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="Acceuil.php">
-          <img src="Images/home.png" height="22"></a></li>
-      </ul>
-    
-
+     <ul class="nav navbar-nav">
+      <li class="active"><a href="Acceuil.php">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Ferraille.php">Ferraille ou Trésor</a></li>
+          <li><a href="#">Bon pour le musée</a></li>
+          <li><a href="#">Accessoires VIP</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Type d'achat
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Enchère</a></li>
+          <li><a href="#">Négociation</a></li>
+          <li><a href="#">Achat immédiat</a></li>
+        </ul>
+      </li>
+    </ul>
       <?php  
 
       ?>

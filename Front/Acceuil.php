@@ -20,24 +20,14 @@
 
 <div class="container">    
   <div class="row">       
-    <div  id="catégories"class="col-lg-2">
-      <p><br>Catégories</p>
-    </div>
-    <div class="col-lg-offset-9 col-lg-1">
+    <div class="col-lg-offset-10 col-lg-1">
       <form>
         <br>
         <div id="barre_recherche">
           <input id="texte_recherche" type="text" value="Rechercher" />
-          <input id="bouton" type="image" src="Images/recherche.png" height="25" alt="Rechercher" />
+          <input id="bouton" type="image" src="Images/recherche.png" height="24" alt="Rechercher" />
         </div>
       </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-10">
-      <p><a href="Ferraille.php" name="categorie" value="ferraille">Ferraille ou Trésor</a> |
-      <a href="annonces.html" name="categorie" value="musee">Bon pour le musée</a> | 
-      <a href="financing.html" name="categorie" value="accessoire">Accessoire VIP</a> </p>
     </div>
   </div>
 </div>
