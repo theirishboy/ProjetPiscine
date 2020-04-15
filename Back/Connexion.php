@@ -23,7 +23,7 @@ if (mysqli_num_rows($Tmdp)==0)
 
 else
 {
-	echo "oui";
+	
 	$req = "SELECT * FROM `vendeur`";
 	$result = connection($req); 
 	$data2 = mysqli_fetch_assoc($result);
