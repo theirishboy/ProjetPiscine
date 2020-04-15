@@ -1,0 +1,19 @@
+body {
+  background-color: rgba(64,128,128,0.3);
+}
+
+
+p {
+	float: right;
+	text-align: left;
+}
+
+.display {
+	float: left;
+}
+
+footer {
+  background-color: rgb(49,49,49);
+  color: white;
+  padding: 25px;
+}

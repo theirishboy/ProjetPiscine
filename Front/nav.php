@@ -7,6 +7,8 @@
 
 }
 </style>
+
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -22,9 +24,27 @@
         <li class="active"><a href="Acceuil.php">
           <img src="Images/home.png" height="22"></a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../Back/Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>
-      </ul>
+    
+
+      <?php  
+
+      ?>
+      <?php if(isset($_COOKIE['statut']))
+      {
+       echo  $_COOKIE['statut'];
+       echo '<ul class="nav navbar-nav navbar-right">';
+      echo  ' <li><a href="../Back/Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Mon panier </a></li>';
+      echo '</ul>';
+      } 
+      else
+      {
+        
+         echo '<ul class="nav navbar-nav navbar-right">';
+      echo  ' <li><a href="../Back/Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>';
+      echo '</ul>';
+      }
+     
+      ?>
     </div>
   </div>
 </nav>
