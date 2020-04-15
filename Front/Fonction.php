@@ -1,7 +1,7 @@
 <?php 
 function listobjet($categorie)
 {
-	$result = connection("SELECT * FROM objet art WHERE objet art.`categorie` = '$categorie'");
+	$result = connection("SELECT * FROM `objet art` WHERE `objet art`.`categorie` = '$categorie'");
 	$a = 0;//nb de colonne
 	$b=0;
 	while($data = mysqli_fetch_assoc($result))
