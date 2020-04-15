@@ -7,5 +7,24 @@ body {
 .thumbnail {
     background-color: rgb(127,127,127);
 }
-
- 
+img{
+	width: 100%;
+    max-height: 220px;
+}
+/*Bouton Voir Item*/
+#VoirItem {
+    width: 100%;
+    background-color: rgba(43,124,125,0.6);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* Bouton Voir Item quand on passe la souris dessus*/
+#VoirItem:hover {
+    background-color: white;
+    color: rgba(0,0,0,0.6);
+    border: 1px solid rgba(43,124,125,0.6);
+}

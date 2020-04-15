@@ -19,12 +19,16 @@
 ?>
 
 <! -- http://www.codeurjava.com/2016/12/formulaire-de-login-avec-html-css-php-et-mysql.html -->
-<div id="fenetre">       
+
+<div id="fenetre">
+       
   <form action="../Back/inscription.php" method="POST">
     <div id="Coordo">
       <h5 class="text-center">Vous êtes nouveau !</h5>
       <h2 class="text-center">Créer votre compte</h2><br>
-       <input  name="Type" type="hidden" value="Vendeur">
+
+      <input  name="Type" type="hidden" value="Vendeur">
+
       <label><b>Prénom</b></label>
       <input type="text" placeholder="Prénom" name="Prenom" required>
 
