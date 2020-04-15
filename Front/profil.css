@@ -23,7 +23,8 @@ border: 3px solid #ccc;
 background: #eee; 
 margin: auto;
 }
-img {
+
+.display {
 width: 100%;
 height: 100%;
 }

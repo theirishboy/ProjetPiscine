@@ -2,7 +2,7 @@ body {
   background-color: rgba(64,128,128,0.3);
 }
 
-h5 {
+.inline {
    display: inline;
 }
 
@@ -12,7 +12,8 @@ height: 150px;
 border: 3px solid #ccc;
 background: #eee;
 }
-img {
+
+.display {
 width: 100%;
 height: 100%;
 }
