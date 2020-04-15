@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
   <title>Objets Vendus</title>
@@ -43,7 +43,7 @@
     	<h2>Bon pour le musée</h2>
     	<br>
 		<div style="width: 800px; height: 150px;  padding-top:10px; padding-bottom:10px;border: 3px solid #A0A0A0; text-align: center;">
-		<img src="img/tableau1.jpg" class="display" alt="tableau" height="100px" width="100px"> 
+		<img src="img/tableau1.jpg" class="display" alt="tableau" height="100px" width="100px">
 		<div class="caption">
 		<p>Henri MARTIN (1860 - 1943) <br> Le port de Collioure <br> Huile sur panneau 65 x 55 cm <br> Signé en bas à gauche Henri Martin 
 		<br><br>70 000€</p></div>
