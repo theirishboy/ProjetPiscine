@@ -21,6 +21,8 @@ function listobjet($categorie)
 		echo '<p>'.$data['Description'].'</p>'; 
 		echo '<p>Catégorie : '.$data['Categorie'].'</p>'; 
 		echo ' <p>Prix : '.$data['Prix'].'€</p>'; 
+		echo ' <p>Prix : '.$data['ID'].'€</p>'; 
+
 		echo ' </div>'; 
 		echo ' </div>'; 
 		echo ' </div>'; 
