@@ -30,6 +30,9 @@
       <?php if(isset($_COOKIE['statut']))
       {
        echo  $_COOKIE['statut'];
+       echo '<ul class="nav navbar-nav navbar-right">';
+      echo  ' <li><a href="../Back/Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Mon panier </a></li>';
+      echo '</ul>';
       } 
       else
       {
