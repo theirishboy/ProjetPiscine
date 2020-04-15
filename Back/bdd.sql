@@ -13,7 +13,7 @@ CREATE TABLE `ebayece`.`Panier` ( `Objet` INT(10) NOT NULL , `Prix`INT(10) NOT N
 
 INSERT INTO `ebayece`.`humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `N_Telephone`, `Mail`, `Media`) VALUES ('1', 'Gabriel', 'Pierre', 'leroux', PASSWORD('motdepasse'), '0648759628', 'pierre.gabriel@edu.ece.fr', '1');
 INSERT INTO `ebayece`.`humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `N_Telephone`, `Mail`, `Media`) VALUES ('2', 'Michenaud ', 'Marine', 'MarineMch', PASSWORD('motdepasse'), '0674859632', 'marine.michenaud@edu.ece.fr', '2');
-INSERT INTO `ebayece`.`humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `N_Telephone`, `Mail`, `Media`) VALUES ('3', 'Perrin ', 'Ryan', 'Num10', PASSWORD('motdepasse'), '0674859632', 'ryan.perrin@edu.ece.fr', '3');
+INSERT INTO `ebayece`.`humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `N_Telephone`, `Mail`, `Media`) VALUES ('3', 'Perrin ', 'Rayan', 'Num10', PASSWORD('motdepasse'), '0674859632', 'rayan.perrin@edu.ece.fr', '3');
 
 INSERT INTO `ebayece`.`admin` (`Humain`) VALUES ('2');
 INSERT INTO `ebayece`.`vendeur` (`Humain`) VALUES ('3');
