@@ -24,6 +24,8 @@
         <li class="active"><a href="Acceuil.php">
           <img src="Images/home.png" height="22"></a></li>
       </ul>
+    
+
       <?php  
 
       ?>
