@@ -28,6 +28,7 @@
 <h2>Catégorie : Ferraille et Trésor</h2><br>
 <?php 
 listobjet("Ferraille ou Tresor");
+
  ?>
 </div>
 <?php
