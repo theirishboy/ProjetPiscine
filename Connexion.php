@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include("ConnexionServeur.php");
+include("Back/ConnexionServeur.php");
 
 $login = isset($_POST["login"])? $_POST["login"] : "";
 $mdp = isset($_POST["mdp"])? $_POST["mdp"] : ""; 
@@ -18,7 +18,7 @@ $data = mysqli_fetch_assoc($Tmdp);
 if (mysqli_num_rows($Tmdp)==0)
 {
 	echo "mauvais mdp";
-	header("Location: ../Front/Connexion.php");
+	header("Location: Front/Connexion.php");
 }
 
 else
@@ -51,7 +51,7 @@ else
 	setcookie('login',$login);
 	setcookie('mdp',$mdp);
 	setcookie('statut',$statut);
-	header("Location: ../Front/Acceuil.php");
+	header("Location: Front/Acceuil.php");
 }
 
 ?>

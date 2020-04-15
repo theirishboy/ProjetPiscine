@@ -20,7 +20,7 @@
 
 <! -- http://www.codeurjava.com/2016/12/formulaire-de-login-avec-html-css-php-et-mysql.html -->
 <div id="fenetre">       
-  <form action="../Back/Connexion.php" method="POST">
+  <form action="../Connexion.php" method="POST">
     <div >
       <h2 class="text-center">
       <img class="align-center" src="Images/IconeLogin.png" height="75">
