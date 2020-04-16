@@ -94,7 +94,7 @@
 <br><br><br>
 
 <div class="container-fluid text-center">
-<input class="favorite styled"
+<input id="submit"
        type="button"
        value="Déposer l'annonce">
 </div>
