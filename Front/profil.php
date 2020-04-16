@@ -43,20 +43,20 @@
 <h3 style="text-align: center">Nom</h3>
 <br>
 <div class="container-fluid text-center">
-	<input class="bouton"
-       type="button"
-       value="Vendre un article"
-       onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/annonce.html'>
-	   <br><br>
-	<input class="bouton"
-       type="button"
-       value="Objets vendus"
-       onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/objets.html'>
-       <br><br>
-	<input class="bouton"
-       type="button"
-       value="Modifier mes informations"
-       onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/modif.html'>    
+	<input id="submit"
+         type="button"
+         value="Vendre un article"
+         onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/annonce.html'>
+	   
+	<input id="submit"
+         type="button"
+         value="Objets vendus"
+         onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/objets.html'>
+       
+	<input id="submit"
+         type="button"
+         value="Modifier mes informations"
+         onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/modif.html'>    
  </div>     
 
 <br><br><br><br>

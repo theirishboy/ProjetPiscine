@@ -78,30 +78,34 @@
         <div class="frame">
         <img src="img/profil.jpg" class="display" alt="profil" height="70px" width="70px">
         </div>
-        <input type="button"
-       value="Modifier la photo de profil">
+        <input id="submit"
+               type="button"
+               value="Modifier la photo de profil">
 
-       <br><br><br><br>
+       <br><br>
 
-       <input type="button"
-       value="Modifier l'image de fond">
+       <input id="submit"
+              type="button"
+              value="Modifier l'image de fond">
 
-       <br><br><br><br><br><br><br>
+       <br><br><br>
 
-       <input type="button"
-       value="Enregistrer les modifications">
+       <input id="submit"
+              type="button"
+              value="Enregistrer les modifications">
 
        <br>
 
-       <input type="button"
-       value="Retour au profil"
-       onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/profil.html'>
+       <input id="submit"
+              type="button"
+              value="Retour au profil"
+              onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/profil.html'>
 
 </div>
 </div>
 </div>
 
-<br>
+
 
  <footer class="page-footer">   
         <div class="container">    
