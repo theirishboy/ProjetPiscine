@@ -24,7 +24,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
      <ul class="nav navbar-nav">
-      <li class="active"><a href="Acceuil.php">Home</a></li>
+      <li><a href="Acceuil.php"><img src="Images/home.png" height="25"></a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories
         <span class="caret"></span></a>
@@ -49,17 +49,35 @@
       ?>
       <?php if(isset($_COOKIE['statut']))
       {
-       echo  $_COOKIE['statut'];
-       echo '<ul class="nav navbar-nav navbar-right">';
-      echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
-      echo '</ul>';
-      } 
+          if($_COOKIE['statut']=='client'){
+            echo  $_COOKIE['statut'];
+            echo '<ul class="nav navbar-nav navbar-right">';
+            echo '<li><a href="MonPanier.php"><img src="Images/panier.png" height="25"></a></li>';
+            echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
+            echo '</ul>';
+          }
+
+          if($_COOKIE['statut']=='vendeur'){
+            echo  $_COOKIE['statut'];
+            echo '<ul class="nav navbar-nav navbar-right">';
+            echo '<li><a href="MonPanier.php"><img src="Images/mesVentes.png" height="30"></a></li>';
+            echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
+            echo '</ul>';
+          }
+
+          if($_COOKIE['statut']=='admin'){
+            echo  $_COOKIE['statut'];
+            echo '<ul class="nav navbar-nav navbar-right">';
+            echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
+            echo '</ul>';
+          }
+      }  
       else
       {
         
-         echo '<ul class="nav navbar-nav navbar-right">';
-      echo  ' <li><a href="../Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>';
-      echo '</ul>';
+        echo '<ul class="nav navbar-nav navbar-right">';
+        echo '<li><a href="../Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>';
+        echo '</ul>';
       }
      
       ?>
