@@ -29,7 +29,8 @@
   $id=$_GET['ID'];
   $result = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$id'");
   $data = mysqli_fetch_assoc($result);
-
+  $cheminimg = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data[Nimage]'");
+  $cheminf= mysqli_fetch_assoc($cheminimg);
   echo '<div class="row ligne"  id="Top">';
     echo '<div class="row">';
     echo '<div class="col-sm-offset-1 col-sm-3">';
@@ -42,7 +43,7 @@
         echo '<!-- Wrapper for slides -->';
         echo '<div class="carousel-inner">';
           echo '<div class="item active">';
-            echo '<img src="'.$data['Cheminimg'].'" alt="Pieces3">';
+            echo '<img src="'.$cheminf['Chemin1'].'" alt="Pieces3">';
             echo '<div class="carousel-caption">';
             echo '</div>';
           echo '</div>';

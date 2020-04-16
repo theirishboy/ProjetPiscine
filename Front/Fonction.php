@@ -6,6 +6,8 @@ function listobjet($categorie)
 	$b=0;
 	while($data = mysqli_fetch_assoc($result))
 	{
+		$cheminimg = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data[Nimage]'");
+		$cheminf= mysqli_fetch_assoc($cheminimg);
 		if($a % 3 == 0)
 		{
 			echo '<div class="row">';
@@ -13,7 +15,7 @@ function listobjet($categorie)
 		echo '<div class="col-xs-6 col-md-4">';
 		echo '<div class="thumbnail">';
 		
-		echo '<img src="'.$data['Cheminimg'].'" class="thumbnail" alt="Pieces1">';
+		echo '<img src="'.$cheminf['Chemin1'].'" class="thumbnail" alt="Pieces1">';
 
 		echo '<div class="caption">';
 		echo '<p>'.$data['Nom'].'</p>';
