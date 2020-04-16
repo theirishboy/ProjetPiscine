@@ -56,7 +56,7 @@ else
 	setcookie('IDhumain',$IDhumain);
 
 	echo $_COOKIE['IDhumain'];
-	//header("Location: Front/Acceuil.php");
+	header("Location: Front/Acceuil.php");
 }
 
 ?>
