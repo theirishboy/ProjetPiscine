@@ -20,8 +20,3 @@ input[id=submit]:hover {
     border: 1px solid rgba(0,0,0,0.6);
 }
 
-footer {
-  background-color: rgb(49,49,49);
-  color: white;
-  padding: 25px;
-}
