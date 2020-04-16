@@ -82,7 +82,7 @@
               echo '</div>';
           echo '</div><br>';
 
-      echo '<input type="submit" id="Item" value="Ajouter au panier"><br>';
+      echo '<a href="../back/Addobjetpanier.php?ID='.$data['ID'].'" target="_blank"> <input type="submit" id="Item" value="Ajouter au panier"></a><br>';
         echo '<input type="submit" id="Offre" value="Faire une offre"><br><br>';
 
   echo '</div>';

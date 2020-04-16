@@ -15,6 +15,8 @@ AND `humain`.`login`= '$login'";
 //$Tmdp=connection($testmotdepasse);
 $Tmdp=connection($testmotdepasse);
 $data = mysqli_fetch_assoc($Tmdp);
+
+$IDhumain = $data['ID'];
 if (mysqli_num_rows($Tmdp)==0)
 {
 	echo "mauvais mdp";
@@ -51,7 +53,10 @@ else
 	setcookie('login',$login);
 	setcookie('mdp',$mdp);
 	setcookie('statut',$statut);
-	header("Location: Front/Acceuil.php");
+	setcookie('IDhumain',$IDhumain);
+
+	echo $_COOKIE['IDhumain'];
+	//header("Location: Front/Acceuil.php");
 }
 
 ?>
