@@ -1,13 +1,34 @@
-body {
-  background-color: rgba(64,128,128,0.3);
+.object-card {
+	display: flex;
+	width: 450px;
+	padding: 10px;
+	margin-left: 100px;
+	border-radius: 5px;
+	opacity: 0.85;
+	-webkit-box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.75);
+}
+.object-card:hover {
+	opacity: 1;
+	transition: 0.3s;
+}
+.object-card > img {
+	border-radius: 2px;
 }
 
-
-p {
-	float: right;
-	text-align: left;
+.description-card {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+}
+.description-card > h3 {
+	margin-bottom: 3px;
+}
+.description-card > h5 {
+	margin-bottom: 30px;
 }
 
-.display {
-	float: left;
+h2 {
+	margin-left: 100px;
 }
