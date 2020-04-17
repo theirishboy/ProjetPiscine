@@ -40,14 +40,14 @@
                echo '<ul class="dropdown-menu">';
                  echo '<li><a href="Ferraille.php?ID=Ferraille ou Tresor">Ferraille ou Trésor</a></li>';
                   echo '<li><a href="Ferraille.php?ID=Bon pour le musee">Bon pour le musée</a></li>';
-                  echo '<li><a href="Ferraille.php?ID=Accessoires VIP">Accessoires VIP</a></li>';
+                  echo '<li><a href="Ferraille.php?ID=Accessoire VIP">Accessoire VIP</a></li>';
           echo '</ul>';
           echo '</li>';
                 echo '<li class="dropdown">';
                 echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Type d achat';
                 echo '<span class="caret"></span></a>';
                 echo '<ul class="dropdown-menu">';
-                echo '<li><a href="Typeaffichage.php?ID=Encheres">Enchère</a></li>';
+                echo '<li><a href="Typeaffichage.php?ID=Enchere">Enchère</a></li>';
                 echo '<li><a href="Typeaffichage.php?ID=Negociation">Négociation</a></li>';
                 echo '<li><a href="Typeaffichage.php?ID=Achat immediat">Achat immédiat</a></li>';
           echo '</ul>';
