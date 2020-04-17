@@ -1,0 +1,69 @@
+body {   
+    padding: 0px;   
+    margin: 0px;   
+    background: rgba(64,128,128,0.3); 
+}
+
+#ItemPanier {     
+    margin-left: 20px;   
+    background-color: red; 
+}
+
+#ImageItem {
+	margin-top: 9px;
+    border-radius: 10px;
+    max-height: 90px;
+    max-width: 110px;
+    vertical-align: middle;
+}
+
+#Supp {
+	max-height: 25px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 1px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Fenetre*/
+#fenetreCommande{
+    width:550px;
+    margin:0 auto;
+    margin-top:1%;
+    margin-bottom: 10%;
+    margin-left:2%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+}
+
+/*Bouton Valider la commande*/
+#Finaliser {
+    width: auto;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#Finaliser:hover {
+    background-color: white;
+    color: rgba(0,0,0,0.6);
+    border: 1px solid rgba(0,0,0,0.6);
+}
+
+#Item{
+	margin-top: 1%;
+	background-color: rgb(205,205,205);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border-radius: 10px;
+
+}
+
