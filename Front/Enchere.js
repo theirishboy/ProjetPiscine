@@ -11,7 +11,7 @@ function Combienargent(id){
 
  }
  
-  function Updatethemoney(id){
+  function Envoietonbiff(id){
 
     var chiffre = prompt("Entrer le montant que vous êtes prêt à mettre", "");
     window.location.href = "../Back/addEnchere.php?var1=" + chiffre + "&var2="+id;            
