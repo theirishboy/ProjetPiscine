@@ -14,9 +14,9 @@ function listobjet($categorie)
 		}
 		echo '<div class="col-xs-6 col-md-4">';
 		echo '<div class="thumbnail">';
-		
-		echo '<img src="'.$cheminf['Chemin1'].'" class="thumbnail" alt="Pieces1">';
-
+		echo '<div>';
+		echo '<img id="imgItem" src="'.$cheminf['Chemin1'].'" class="thumbnail" alt="Article">';
+		echo '</div>';
 		echo '<div class="caption">';
 		echo '<p>'.$data['Nom'].'</p>';
 		echo '<p>'.$data['Description'].'</p>';

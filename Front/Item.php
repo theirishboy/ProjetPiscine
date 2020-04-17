@@ -44,7 +44,7 @@
         echo '<!-- Wrapper for slides -->';
         echo '<div class="carousel-inner">';
           echo '<div class="item active">';
-            echo '<img src="'.$cheminf['Chemin1'].'" alt="Pieces3">';
+            echo '<img src="'.$cheminf['Chemin1'].'" alt="Aticle">';
             echo '<div class="carousel-caption">';
             echo '</div>';
           echo '</div>';
