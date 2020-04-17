@@ -100,18 +100,33 @@ include("../Back/ConnexionServeur.php");
  echo '</div>';
  echo '</div><br>';
   $a = $data['ID'];
+  
+  {
+    if($data['Type de vente'] != "Enchere")
+    {
+      $verificationpaspannier=connection("SELECT `Humain` FROM `panier`WHERE `panier`.`Objet`='$data[ID]'");
+      $verificationpasoffre=connection("SELECT `IDclient` FROM `offre`WHERE `offre`.`IDobjet`='$data[ID]' AND `offre`.`IDclient` = '$_COOKIE[IDhumain]'");
+      if(mysqli_num_rows($verificationpaspannier)==0 && mysqli_num_rows($verificationpasoffre)==0 )
+      {
+        echo '<a href="../back/Addobjetpanier.php?ID='.$data['ID'].'" target="_blank"> <input type="submit" id="Item" value="Ajouter au panier"></a><br>';
 
- if($data['Type de vente'] != "Encheres")
- {
-   echo '<a href="../back/Addobjetpanier.php?ID='.$data['ID'].'" target="_blank"> <input type="submit" id="Item" value="Ajouter au panier"></a><br>';
+        echo '<input type="button" id="Offre" onclick="Combienargent('.$a.')" value="Faire une offre"><br><br>';
+      }
 
- echo '<input type="button" id="Offre" onclick="Combienargent('.$a.')" value="Faire une offre"><br><br>';
 
- }
- else
-{
-  echo '<input type="button" id="Offre" onclick="Envoietonbiff('.$a.')" value="Faire une enchère"><br><br>';
-}
+    }
+    else
+    {
+      $verificationpasenchère=connection("SELECT `IDclient` FROM `enchere`WHERE `enchere`.`IDobjet`='$data[ID]' AND `enchere`.`IDclient` = '$_COOKIE[IDhumain]'");
+      if(mysqli_num_rows($verificationpasenchère)==0 )
+      {
+              echo '<input type="button" id="Offre" onclick="Envoietonbiff('.$a.')" value="Faire une enchère"><br><br>';
+
+      }
+
+    }
+  }
+
 
  echo '</div>';
  echo '</div>';
