@@ -10,3 +10,4 @@ function Combienargent(id){
     window.location.href = "../Back/Updateoffre.php?var1=" + chiffre + "&var2="+id;            
 
  }
+ 
