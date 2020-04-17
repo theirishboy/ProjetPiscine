@@ -11,11 +11,16 @@ CREATE TABLE `ebayece`.`objet art` ( `ID` INT(10) NOT NULL , `Nom` VARCHAR(50) N
 CREATE TABLE `ebayece`.`client` ( `Humain` INT(10) NOT NULL , `N_Telephone` VARCHAR(10) NOT NULL ,`Pays` VARCHAR(50) NOT NULL , `Ville` VARCHAR(50) NOT NULL , `Code_Postal` VARCHAR(50) NOT NULL , `AdresseL1` VARCHAR(50) NOT NULL , `AdresseL2` VARCHAR(50) NOT NULL , `Type_de_carte` VARCHAR(50) NOT NULL , `Numero_de_carte` VARCHAR(20) NOT NULL,`Nomcarte` VARCHAR(50) NOT NULL,`Dateexpi` DATE NOT NULL,`Codesecu` VARCHAR(5) NOT NULL , INDEX (`Humain`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`panier` ( `Humain` INT(10) NOT NULL , `Objet` INT(10) NOT NULL , `Prix` VARCHAR(10) NOT NULL , INDEX `Humain` (`Humain`), INDEX `Objet art` (`Objet`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`objetvendu` ( `Objet` INT(10) NOT NULL , `Humain` INT(10) NOT NULL , `Prix` VARCHAR(10) NOT NULL , INDEX `Objet art` (`Objet`), INDEX `Humain` (`Humain`)) ENGINE = MyISAM; 
-CREATE TABLE `ebayece`.`images` (  `ID` INT NOT NULL AUTO_INCREMENT , `Chemin1`VARCHAR(250) NOT NULL ,`Chemin2`VARCHAR(250) NOT NULL,`Chemin3`VARCHAR(250) NOT NULL,PRIMARY KEY (`ID`)) ENGINE = MyISAM; 
+CREATE TABLE `ebayece`.`images` ( `ID` INT NOT NULL AUTO_INCREMENT , `Chemin1`VARCHAR(250) NOT NULL ,`Chemin2`VARCHAR(250) NOT NULL,`Chemin3`VARCHAR(250) NOT NULL,PRIMARY KEY (`ID`)) ENGINE = MyISAM; 
+CREATE TABLE `ebayece`.`enchere` (  `IDobjet`  INT (10) NOT NULL , `IDclientMax` INT(10) NOT NULL ,`IDvendeur` INT(10) NOT NULL,`Prixnouveau` INT(10) NOT NULL,`Prixancien` INT(10) NOT NULL); 
+CREATE TABLE `ebayece`.`offre` (  `IDobjet`  INT (10) NOT NULL , `IDclient` VARCHAR(10) NOT NULL ,`IDvendeur` INT(10) NOT NULL,`Prixnouveau` VARCHAR(10) NOT NULL,`NombreProposition` INT(10) NOT NULL,`statut` VARCHAR(20) NOT NULL); 
+
+
 
 INSERT INTO `ebayece`.`humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `Mail`, `Nimage`) VALUES ('1', 'Gabriel', 'Pierre', 'leroux', PASSWORD('motdepasse'),  'pierre.gabriel@edu.ece.fr', '1');
 INSERT INTO `ebayece`.`humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `Mail`, `Nimage`) VALUES ('2', 'Michenaud ', 'Marine', 'MarineMch', PASSWORD('motdepasse'),  'marine.michenaud@edu.ece.fr', '2');
 INSERT INTO `ebayece`.`humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `Mail`, `Nimage`) VALUES ('3', 'Perrin ', 'Rayan', 'Num10', PASSWORD('motdepasse'),  'rayan.perrin@edu.ece.fr', '3');
+
 
 INSERT INTO `ebayece`.`admin` (`Humain`) VALUES ('2');
 INSERT INTO `ebayece`.`vendeur` (`Humain`) VALUES ('3');
@@ -29,3 +34,5 @@ INSERT INTO `ebayece`.`objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Typ
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('1','Images/Pieces1','','');
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('2','Images/Pieces3.1','','');
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('3','Images/Pieces2.2','','');
+
+INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('3','','3','','0','Vendeur');
