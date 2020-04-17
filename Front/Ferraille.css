@@ -7,7 +7,7 @@ body {
 .thumbnail {
     background-color: rgb(127,127,127);
 }
-img{
+#imgItem{
 	width: 100%;
     max-height: 220px;
 }

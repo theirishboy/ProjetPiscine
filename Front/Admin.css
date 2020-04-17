@@ -1,0 +1,43 @@
+body {   
+    padding: 0px;   
+    margin: 0px;   
+    background: rgba(134,210,165,0.3); 
+}
+
+.titre{
+	text-align : center;
+	margin-top: 10px;
+	font-family: Comic Sans MS;
+}
+
+#imgItem{
+	width: 90%;
+    max-height: 80px;
+}
+
+#Supp {
+	max-height: 25px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 1px 13px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#Add {
+    width: 100%;
+    background-color: rgba(43,124,125,0.6);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* Bouton créer un compte quand on passe la souris dessus*/
+#Add:hover {
+    background-color: white;
+    color: rgba(0,0,0,0.6);
+    border: 1px solid rgba(43,124,125,0.6);
+}
