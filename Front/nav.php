@@ -8,6 +8,9 @@
 .dropdown-menu{
   background-color: grey;
 }
+#title{
+  color:grey;
+}
 
 }
 </style>
@@ -86,7 +89,6 @@
         else
         {
           
-          echo  $_COOKIE['statut'];
                   echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories';
                   echo '<span class="caret"></span></a>';
                   echo '<ul class="dropdown-menu">';
@@ -132,8 +134,8 @@
           if($_COOKIE['statut']=='admin'){
             echo  $_COOKIE['statut'];
             echo '<ul class="nav navbar-nav navbar-right">';
-            echo '<li><a href="AdminVendeur.php"><img src="Images/ListeVendeur.png" height="25"></a></li>';
-            echo '<li><a href="AdminItem.php"><img src="Images/ListeItem.png" height="25"></a></li>';
+            echo '<li><a href="AdminVendeur.php" id="title"><img src="Images/ListeVendeur.png" height="28">  Liste Vendeurs</a></li>';
+            echo '<li><a href="AdminItem.php" id="title"><img src="Images/ListeItem.png" height="25">  Liste Items</a></li>';
             echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
             echo '</ul>';
           }
