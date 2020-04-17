@@ -4,9 +4,9 @@ session_start();
 include("ConnexionServeur.php");
 
 
-$IDobjet = 1;
+$IDobjet =$_GET['var2'];
 
-$offre=369;
+$offre=$_GET['var1'];
 
 $sql = connection("SELECT * FROM `enchere` where Prixmax IN (SELECT max(Prixmax) from `enchere` )
 ");
@@ -27,6 +27,7 @@ if($data['Prixactuel'] < $offre)
 		$actualisation = connection("UPDATE `enchere` SET `Prixactuel`='$offre' ");
 	}
 }
+Header("Location: ../Front/MonPanier.php");
 
 
 ?>

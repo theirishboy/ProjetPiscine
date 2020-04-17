@@ -26,13 +26,14 @@ INSERT INTO `ebayece`.`admin` (`Humain`) VALUES ('2');
 INSERT INTO `ebayece`.`vendeur` (`Humain`) VALUES ('3');
 INSERT INTO `ebayece`.`client` (`Humain`, `N_Telephone`,`Pays`,`Ville`, `Code_Postal`, `AdresseL1`, `AdresseL2`, `Type_de_carte`, `Numero_de_carte`,`Nomcarte`,`Dateexpi`,`Codesecu`) VALUES ('1','0648759628', 'France','Paris', '75011', '115 avenue Philippe Auguste', '', 'Mastercard', '751221596233659','Gabriel','2021-05-19','359');
 
-INSERT INTO `ebayece`.`objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`,`Nimage`) VALUES ('1', 'Bijoux de la reine Marie Tudor', 'Bijoux de la reine Marie Alisa bloody Mary', 'Bon pour le musee', 'Encheres', '450','0');
+INSERT INTO `ebayece`.`objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`,`Nimage`) VALUES ('1', 'Bijoux de la reine Marie Tudor', 'Bijoux de la reine Marie Alisa bloody Mary', 'Bon pour le musee', 'Encheres', '450','4');
 INSERT INTO `ebayece`.`objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`,`Nimage`) VALUES ('2', '6 pieces or', 'Lot de 6 pieces de 20 francs en or coq de Chaplain de 1907 et une 1912', 'Ferraille ou Tresor', 'Encheres', '1500 ','1');
 INSERT INTO `ebayece`.`objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`,`Nimage`) VALUES ('3', 'Medaille Raspail', 'Medaille circulaire en bronze figurant Raspail "L ami du peuple" de profil. Diametre : 14 cm', 'Ferraille ou Tresor', 'Encheres', '15','2');
 INSERT INTO `ebayece`.`objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`,`Nimage`) VALUES ('4', '3 pieces Napoleon III', 'Lot de 3 piece de 20 francs en or Napoleon III dattant de 1853 1860 et 1862', 'Ferraille ou Tresor', 'Encheres', '550','3');
 
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('1','Images/Pieces1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('2','Images/Pieces3.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('3','Images/Pieces2.2','','');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('2','Images/Pieces3.1','Images/Pieces3.2','Images/Pieces3.3');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('3','Images/Pieces2.2','Images/Pieces2.1','');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('4','Images/BijouxMt1','Images/BijouxMT2','Images/BijouxMt3');
 
 INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('3','','3','','0','Vendeur');

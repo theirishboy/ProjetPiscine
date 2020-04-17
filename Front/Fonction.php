@@ -64,4 +64,49 @@ function objetsvendus($ID)
 	}
 }
 
+function listobjetpartype($Typedevente)
+{
+	$result = connection("SELECT * FROM `objet art` WHERE `objet art`.`Type de vente` = '$Typedevente'");
+	$a = 0;//nb de colonne
+	$b=0;
+	while($data = mysqli_fetch_assoc($result))
+	{
+		$cheminimg = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data[Nimage]'");
+		$cheminf= mysqli_fetch_assoc($cheminimg);
+		if($a % 3 == 0)
+		{
+			echo '<div class="row">';
+		}
+		echo '<div class="col-xs-6 col-md-4">';
+		echo '<div class="thumbnail">';
+		echo '<div>';
+		echo '<img id="imgItem" src="'.$cheminf['Chemin1'].'" class="thumbnail" alt="Article">';
+		echo '</div>';
+		echo '<div class="caption">';
+		echo '<p>'.$data['Nom'].'</p>';
+		echo '<p>'.$data['Description'].'</p>';
+		echo '<p>Catégorie : '.$data['Categorie'].'</p>';
+		echo ' <p>Prix : '.$data['Prix'].'€</p><br>';
+		echo '<a href="Item.php?ID='.$data['ID'].'" id="VoirItem">Voir Item</a>';
+		echo ' <br><br></div>';
+		echo ' </div>';
+		echo ' </div>';
+		$b = $a+1;
+		if($a % 3 == 2)
+		{
+			echo '</div>';
+		}
+
+		if($b== mysqli_num_rows($result)){
+			if($a % 3 == 0 || $a % 3 == 1){
+			for($i = 0; $i<3-($a % 3); $i++){
+				echo '</div class="thumbnail">';
+			}
+		}
+		}
+
+		$a+=1;
+	}
+}
+
 ?>
