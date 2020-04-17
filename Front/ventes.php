@@ -18,8 +18,21 @@
     ?>
 
     <h1 style="text-align: center">Mes ventes en cours</h1>
-    <br>
     <h2>Enchères</h2>
+    <div class="object-card">
+        <img src="Images/tableau2.jpg" alt="tableau" width="160px">
+        <div class="description-card">
+            <h3>Le port de Collioure</h3>
+            <h4>Henri MARTIN (1860 - 1943)</h4>
+            <h5>Catégorie : Bon pour le musée</h5>
+            <h5>Valeur : 70 000€</h5>
+            <h5>Plus haut prix proposé : 132 000€</h5>
+            <input id="submit"
+              type="button"
+              value="Vendre maintenant">
+        </div>
+    </div>
+
     <div class="object-card">
         <img src="Images/tableau2.jpg" alt="tableau" width="160px">
         <div class="description-card">
@@ -33,6 +46,8 @@
               value="Vendre maintenant">
         </div>
     </div>
+
+    <br>
 
     <h2>Meilleures offres</h2>
     <div class="object-card">
