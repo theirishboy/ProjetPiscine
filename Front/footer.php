@@ -27,7 +27,7 @@ h5{
                         +33 01 03 02 05 04       
                     </h5>     
                 </div>  
-                <div class="col-lg-3 col-md-5 col-sm-12">       
+                <div class="col-lg-3 col-md-5 col-sm-12" id="image">       
                     <h4 class="text-uppercase font-weight-bold"><b>Suivez-nous !</b></h5>       
                     <a aria-label="Twitter" title="Twitter" href="https://twitter.com">
                       <img src="Images/twitter.png" alt="Twitter" height="55">
