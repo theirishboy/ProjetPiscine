@@ -16,6 +16,7 @@
   <link href="Images/Logo_EbayECE.ico" rel="icon" type="images/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="Enchere.js"> </script>
 </head>
 
 <body>
@@ -83,7 +84,9 @@
           echo '</div><br>';
 
       echo '<a href="../back/Addobjetpanier.php?ID='.$data['ID'].'" target="_blank"> <input type="submit" id="Item" value="Ajouter au panier"></a><br>';
-        echo '<input type="submit" id="Offre" value="Faire une offre"><br><br>';
+      $a = $data['ID'];
+
+        echo '<input type="button" id="Offre" onclick="Combienargent('.$a.')" value="Faire une offre"><br><br>';
 
   echo '</div>';
 echo '</div>';

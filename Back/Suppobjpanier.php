@@ -3,12 +3,12 @@
 
 session_start(); 
 include("ConnexionServeur.php"); 
-$IDobjet = isset($_POST["IDobjet"])? $_POST["IDobjet"] : "";
-$IDhumain = isset($_POST["IDhumain"])? $_POST["IDhumain"] : "";
 
-echo "on test git hub";
+$IDobjet = $_GET['ID'];
+echo $IDobjet.$_COOKIE['IDhumain'];
 
 
-$req = "DELETE FROM `panier` WHERE `Humain` = '$IDhumain' AND `objet`  = '$IDobjet'"; 
-$result = connection($req);  
+$req = connection("DELETE FROM `panier` WHERE `Humain` = '$_COOKIE[IDhumain]' AND `Objet`  = '$IDobjet'");
+header("Location: ../Front/MonPanier.php");  
+//$result = connection($req);  
  ?>
