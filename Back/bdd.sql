@@ -4,10 +4,10 @@ CREATION DES TABLES
 <meta charset="utf-8" />
 CREATE DATABASE `ebayece`;
 
-CREATE TABLE `ebayece`.`Humain` ( `ID` INT NOT NULL AUTO_INCREMENT , `Nom` VARCHAR(50) NOT NULL , `Prenom` VARCHAR(50) NOT NULL , `Login` VARCHAR(50) NOT NULL , `Mot_de_passe` VARCHAR(50) NOT NULL ,  `Mail` VARCHAR(50) NOT NULL , `Nimage` INT(10) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = MyISAM; 
+CREATE TABLE `ebayece`.`Humain` (`ID` INT(10) NOT NULL AUTO_INCREMENT , `Nom` VARCHAR(50) NOT NULL , `Prenom` VARCHAR(50) NOT NULL , `Login` VARCHAR(50) NOT NULL , `Mot_de_passe` VARCHAR(50) NOT NULL ,  `Mail` VARCHAR(50) NOT NULL , `Nimage` INT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`Vendeur` ( `Humain` INT(10) NOT NULL , INDEX (`Humain`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`Admin` ( `Humain` INT(10) NOT NULL , INDEX (`Humain`)) ENGINE = MyISAM; 
-CREATE TABLE `ebayece`.`objet art` ( `ID` INT(10) NOT NULL , `Nom` VARCHAR(50) NOT NULL , `Description` VARCHAR(250) NOT NULL , `Categorie` VARCHAR(50) NOT NULL , `Type de vente` VARCHAR(50) NOT NULL , `Prix` INT(10) NOT NULL ,`Nimage` INT(10) NOT NULL ,PRIMARY KEY (`ID`)) ENGINE = MyISAM; 
+CREATE TABLE `ebayece`.`objet art` ( `ID` INT(10) NOT NULL AUTO_INCREMENT, `Nom` VARCHAR(50) NOT NULL , `Description` VARCHAR(250) NOT NULL , `Categorie` VARCHAR(50) NOT NULL , `Type de vente` VARCHAR(50) NOT NULL , `Prix` INT(10) NOT NULL ,`Nimage` INT(10) NOT NULL ,PRIMARY KEY (`ID`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`client` ( `Humain` INT(10) NOT NULL , `N_Telephone` VARCHAR(10) NOT NULL ,`Pays` VARCHAR(50) NOT NULL , `Ville` VARCHAR(50) NOT NULL , `Code_Postal` VARCHAR(50) NOT NULL , `AdresseL1` VARCHAR(50) NOT NULL , `AdresseL2` VARCHAR(50) NOT NULL , `Type_de_carte` VARCHAR(50) NOT NULL , `Numero_de_carte` VARCHAR(20) NOT NULL,`Nomcarte` VARCHAR(50) NOT NULL,`Dateexpi` DATE NOT NULL,`Codesecu` VARCHAR(5) NOT NULL , INDEX (`Humain`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`panier` ( `Humain` INT(10) NOT NULL , `Objet` INT(10) NOT NULL , `Prix` VARCHAR(10) NOT NULL , INDEX `Humain` (`Humain`), INDEX `Objet art` (`Objet`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`objetvendu` ( `Objet` INT(10) NOT NULL , `IDclient` INT(10) NOT NULL ,`IDvendeur` INT(10) NOT NULL , `Prix` VARCHAR(10) NOT NULL , INDEX `Objet art` (`Objet`)) ENGINE = MyISAM; 
