@@ -14,8 +14,8 @@ include("../Back/ConnexionServeur.php");
   <link href="Images/Logo_EbayECE.ico" rel="icon" type="images/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="validationCommande.js"></script>
-    <script type="text/javascript" src="Enchere.js"> </script>
+  <script type="text/javascript" src="Enchere.js"> </script>
+  <script type="text/javascript" src="PaiementImpossible.js"> </script>
 
 </head>
 
@@ -26,6 +26,10 @@ include("../Back/ConnexionServeur.php");
 
   <?php
   $tot=0;
+  $totAchat=0;
+  $totNégo=0;
+  $totEnch=0;
+
   $result = connection("SELECT * FROM `panier` WHERE `panier`.`Humain` = '$_COOKIE[IDhumain]'"); //récupère objets du panier de IDhumain connecté
 
   echo '<div class="container-fluid">';
@@ -74,7 +78,7 @@ include("../Back/ConnexionServeur.php");
                 echo '</div>'; //ferme ma colonne 12
               echo '</div><br>'; //ferme la ligne de l'item
 
-              $tot=$tot + $data2['Prix'];
+              $totAchat += $data2['Prix'];
             }
             //Affichage enchères
             $result = connection("SELECT * FROM `enchere` WHERE `enchere`.`IDclient` = '$_COOKIE[IDhumain]'"); //récupère objets du panier de IDhumain connecté
@@ -120,7 +124,7 @@ include("../Back/ConnexionServeur.php");
                 echo '</div>'; //ferme ma colonne 12
               echo '</div><br>'; //ferme la ligne de l'item
 
-              $tot=$tot + $dataMoneyyy['Prixactuel'];
+              $totEnch += $dataMoneyyy['Prixactuel'];
             }
 
             //affichages négociations
@@ -132,7 +136,6 @@ include("../Back/ConnexionServeur.php");
               $data2 = mysqli_fetch_assoc($objet);
               $cheminimage = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data2[Nimage]'");
               $chemin= mysqli_fetch_assoc($cheminimage);
-
 
               echo '<div class="row" id="Item">'; //ligne de l'item
                 echo '<div class="col-sm-12">'; // Colonne 12 des items
@@ -171,27 +174,56 @@ include("../Back/ConnexionServeur.php");
                 echo '</div>'; //ferme ma colonne 12
               echo '</div><br>'; //ferme la ligne de l'item
 
-              $tot=$tot + $data2['Prix'];
+              $totNégo += $data2['Prix'];
             }
 
-            
+            echo '</div>';        // Fin de la liste des items             
 
+            $portemonnaie = connection("SELECT `PorteMonnaie` FROM `client` WHERE `Humain` = '$_COOKIE[IDhumain]'");
+            $dataPortemonnaie = mysqli_fetch_assoc($portemonnaie);
 
-            echo '</div>';        // Fin de la liste des items 
+            $tot = $totAchat + $totNégo;
+
             echo '<div class="col-sm-5" id="fenetreCommande">';             // Colonne de la commande
             echo '<div class="row">';
             echo '<div class="col-sm-12">';
             echo '<h3 class="text-center">Total de la commande</h3><br>';
             echo '</div>';
             echo '</div>';
+
+
             echo '<div class="row">';
             echo '<div class="col-sm-9">';
-            echo '<h5 class="text-left">Sous-total</h5>';  
+            echo '<h5 class="text-left">Sous-total achats immédiats</h5>';  
             echo '</div>';
             echo '<div class="col-sm-3">';
-            echo '<h5 class="text-right">'.$tot.' €</h5>';
+            echo '<h5 class="text-right">'.$totAchat.' €</h5>';
             echo '</div>';
             echo '</div>';
+
+            echo '<div class="row">';
+            echo '<div class="col-sm-9">';
+            echo '<h5 class="text-left">Sous-total négociations</h5>';  
+            echo '</div>';
+            echo '<div class="col-sm-3">';
+            echo '<h5 class="text-right">'.$totNégo.' €</h5>';
+            echo '</div>';
+            echo '</div>';
+
+            echo '<div class="row">';
+            echo '<div class="col-sm-9">';
+            echo '<h5 class="text-left">Sous-total enchères</h5>';  
+            echo '</div>';
+            echo '<div class="col-sm-3">';
+            echo '<h5 class="text-right">'.$totEnch.' €</h5>';
+            echo '</div>';
+            echo '</div>';
+            echo '<div class="row">';
+            echo '<div class="col-sm-9">';
+            echo '<h6 class="text-left">(Les enchères ne sont pas prises en compte car se règlent à la fin de l évènement.)</h6><br>';  
+            echo '</div>';
+            echo '</div>';
+
             echo '<div class="row">';
             echo '<div class="col-sm-9">';
             echo '<h5 class="text-left">Livraison </h5>';
@@ -213,7 +245,12 @@ include("../Back/ConnexionServeur.php");
             echo '</div>';
             echo '<div class="row">';
             echo '<div class="col-sm-12" style="text-align: center;">';
-            echo '<a href="Acceuil.php"><button onclick="validationCommande()" id="Finaliser"><b>Valider la commande</b></button></a>';
+            if($tot > $dataPortemonnaie['PorteMonnaie']){
+                echo '<button id="Finaliser" onclick="PaiementImpossible()"><b>Passer au paiement</b></button>';
+            }
+            elseif($tot <= $dataPortemonnaie['PorteMonnaie']) {
+                echo '<a href="Paiement.php?tot='.$tot.'"><button id="Finaliser"><b>Passer au paiement</b></button></a>';
+            }
             echo '</div>';
             echo '</div>';  
             echo '</div>';  
