@@ -26,12 +26,12 @@
       <br>
       <h5 class="inline">Prénom</h5>
       <form method="post">
-      <p><input type="text" name="adresse" /></p>
+      <p><input type="text" name="prénom" /></p>
       </form>
       
       <h5 class="inline">Nom</h5>
       <form method="post">
-      <p><input type="text" name="adresse" /></p>
+      <p><input type="text" name="nom" /></p>
       </form>
 
       <br>
@@ -45,7 +45,7 @@
 
       <h5 class="inline">Adresse e-mail</h5>
       <form method="post">
-      <p><input type="text" name="adresse" /></p>
+      <p><input type="text" name="mail" /></p>
       </form>
 
       <br>
@@ -58,7 +58,54 @@
 
 </div>
 
-      <div class="col-lg-offset-7 col-lg-3">
+      <div class="col-lg-offset-3 col-lg-4">
+      <br>
+      <h5 class="inline">Adresse 1</h5>
+      <form method="post">
+      <p><input type="text" name="adresse1" /></p>
+      </form>
+      
+      <h5 class="inline">Adresse 2</h5>
+      <form method="post">
+      <p><input type="text" name="adresse2" /></p>
+      </form>
+
+      <br>
+
+      <h5 class="inline">Ville</h5>
+      <form method="post">
+      <p><input type="text" name="ville"></p>
+     </form>
+
+      <br>
+
+      <h5 class="inline">Code Postal</h5>
+      <form method="post">
+      <p><input type="text" name="codepostal"></p>
+      </form>
+
+      <br>
+
+      <h5 class="inline">Pays</h5>
+      <form method="post">
+      <p><input type="text" name="pays"></p>
+      </form>
+
+      <br>
+
+      <h5 class="inline">N° de téléphone</h5>
+      <form method="post">
+      <p><input type="text" name="téléphone"></p>
+      </form>
+
+      <input id="submit"
+              type="button"
+              value="Modifier les données bancaires">        
+
+    </div>
+
+
+      <div class="col-lg-offset-0 col-lg-3">
         <div class="frame">
         <img src="Images/profil.jpg" class="display" alt="profil" height="70px" width="70px">
         </div>
@@ -83,12 +130,13 @@
        <input id="submit"
               type="button"
               value="Retour au profil"
-              onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/profil.php'>
+              onclick=window.location.href='profil.php'>
 
 </div>
 </div>
 </div>
 
+<br>
 
 <?php
     include("footer.php");
