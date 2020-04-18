@@ -82,14 +82,14 @@
     <?php
 
 
-        $rand1 = random_int(1, 4);
+        $rand1 = random_int(1, 20);
         $rand2=$rand1;
         while ($rand2 == $rand1){
-          $rand2 = random_int(1, 4);
+          $rand2 = random_int(1, 20);
         }
         $rand3=$rand2;
         while ($rand3 == $rand2 || $rand3 == $rand1){
-          $rand3 =random_int(1, 4);
+          $rand3 =random_int(1, 20);
         }
       
         $ArticleJour1 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand1'");

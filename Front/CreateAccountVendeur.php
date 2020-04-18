@@ -39,14 +39,9 @@
       <input type="text" placeholder="Adresse mail" name="Mail" required>
 
       <label><b>Identifiant</b></label>
-      <input type="text" placeholder="Indentifiant" name="Login" required>
+      <input type="text" placeholder="Identifiant" name="Login" required>
 
-      <label><b>Mot de passe</b></label>
-      <input type="password" placeholder="Mot de passe" name="Mot_de_passe" required>
-
-      <label><b>Confirmation du mot de passe</b></label>
-      <input type="password" placeholder="Confirmation du mot de passe" name="mdp" required><br><br>
-
+      <h5><b>Votre mot de passe équivaut à votre adresse mail</b></h5><br>
       <div>
         <input type="checkbox" id="Conditions" required="required">
         <label for="subscribeNews">En créant un compte vous accepter les <u>Conditions générales</u> et <u>Politique de confidentialité</u> de Ebay ECE.</label>
