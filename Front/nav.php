@@ -57,22 +57,15 @@
     
           if($_COOKIE['statut']=='vendeur')
           {
-                 echo  $_COOKIE['statut'];
-                echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories';
                 echo '<span class="caret"></span></a>';
                 echo '<ul class="dropdown-menu">';
-                  echo '<li><a href="Ferraille.php?ID=Ferraille ou Trésor">Ferraille ou Trésor</a></li>';
-                  echo '<li><a href="Ferraille.php?ID=Bon pour le musée">Bon pour le musée</a></li>';
-                  echo '<li><a href="Ferraille.php?ID=Accessoires VIP">Accessoires VIP</a></li>';
+                
           echo '</ul>';
           echo '</li>';
                 echo '<li class="dropdown">';
-                echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Type d achat';
                 echo '<span class="caret"></span></a>';
                 echo '<ul class="dropdown-menu">';
-                echo '<li><a href="#">Enchère</a></li>';
-                echo '<li><a href="#">Négociation</a></li>';
-                echo '<li><a href="#">Achat immédiat</a></li>';
+       
           echo '</ul>';
           echo '</li>';
           echo '</ul>';
@@ -113,7 +106,6 @@
       <?php if(isset($_COOKIE['statut']))
       {
           if($_COOKIE['statut']=='client'){
-            echo  $_COOKIE['statut'];
             echo '<ul class="nav navbar-nav navbar-right">';
             echo '<li><a href="MonPanier.php"><img src="Images/panier.png" height="25"></a></li>';
             echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
@@ -121,15 +113,13 @@
           }
 
           if($_COOKIE['statut']=='vendeur'){
-            echo  $_COOKIE['statut'];
             echo '<ul class="nav navbar-nav navbar-right">';
-            echo '<li><a href="MonPanier.php"><img src="Images/mesVentes.png" height="30"></a></li>';
+            echo '<li><a href="ventes.php"><img src="Images/mesVentes.png" height="30"></a></li>';
             echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
             echo '</ul>';
           }
 
           if($_COOKIE['statut']=='admin'){
-            echo  $_COOKIE['statut'];
             echo '<ul class="nav navbar-nav navbar-right">';
             echo '<li><a href="AdminVendeur.php" id="title"><img src="Images/ListeVendeur.png" height="28">  Liste Vendeurs</a></li>';
             echo '<li><a href="AdminItem.php" id="title"><img src="Images/ListeItem.png" height="25">  Liste Items</a></li>';

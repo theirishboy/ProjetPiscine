@@ -9,6 +9,8 @@
   <link href="Images/Logo_EbayECE.ico" rel="icon" type="images/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="Enchere.js"> </script>
+
 
 </head>
 <body>
@@ -16,70 +18,82 @@
     <?php
         include("nav.php");
     ?>
+    <?php 
 
-    <h1 style="text-align: center">Mes ventes en cours</h1>
-  <h2>Enchères</h2>
-  <br>
-  <div class="card-list">
-    <div class="object-card">
-      <img src="Images/tableau2.jpg" alt="tableau" height="90%" width="40%">
-      <div class="description-card">
-        <h3>Le port de Collioure</h3>
-        <h4>Henri MARTIN</h4>
-        <h5>Catégorie : Bon pour le musée</h5>
-        <h5>Valeur : 70 000€</h5>
-        <h5>Plus haut prix proposé : 132 000€</h5>
-        <input id="submit"
-          type="button"
-          value="Vendre maintenant">
-      </div>
-    </div>
-    <div class="object-card">
-      <img src="Images/tableau3.jpg" alt="tableau" height="90%" width="40%">
-      <div class="description-card">
-        <h3>Original Portrait</h3>
-        <h4>Tony Curtis</h4>
-        <h5>Catégorie : Bon pour le musée</h5>
-        <h5>Valeur : 5 900€</h5>
-        <h5>Plus haut prix proposé : 17 000€</h5>
-        <input id="submit"
-          type="button"
-          value="Vendre maintenant">
-      </div>
-    </div>
-    <div class="object-card">
-      <img src="Images/tableau4.jpg" alt="tableau" height="90%" width="40%">
-      <div class="description-card">
-        <h3>Fruit Morte Vie</h3>
-        <h4>Raya Sorkine</h4>
-        <h5>Catégorie : Bon pour le musée</h5>
-        <h5>Valeur : 3 500€</h5>
-        <h5>Plus haut prix proposé : 11 600€</h5>
-        <input id="submit"
-          type="button"
-          value="Vendre maintenant">
-      </div>
-    </div>
-  </div>
 
-    <br>
+session_start();
+include("../Back/ConnexionServeur.php");
+$sql = connection("SELECT * FROM `enchere` WHERE IDvendeur ='$_COOKIE[IDhumain]'");
+ echo' <h1 style="text-align: center">Mes ventes en cours</h1>';
+ echo' <h2 style="text-align: center">Enchères</h2>';
 
-  <h2>Meilleures offres</h2>
-  <div class="card-list">
-    <div class="object-card">
-      <img src="Images/piecefoot.jpg" alt="tableau" height="50%" width="40%">
-      <div class="description-card">
-        <h3>Pièce 2€ commémorative UEFA EURO 2016</h3>
-        <h5>Catégorie : Feraille ou trésor</h5>
-        <h5>Valeur : 100€</h5>
-        <h5>Prix proposé par le client : 75€</h5>
-        <input id="submit"
-          type="button"
-          value="Accepter le prix proposé">
-  
-          <input id="submit"
-          type="button"
-          value="Decliner l'offre">
+  echo' <br>';
+ echo' <div class="card-list">';
+while($data = mysqli_fetch_assoc($sql))
+{
+  $result = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$data[IDobjet]'");
+  $dataobj = mysqli_fetch_assoc($result);
+  $cheminimg = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$dataobj[Nimage]'");
+  $cheminf= mysqli_fetch_assoc($cheminimg);
+
+
+   echo' <div class="object-card">';
+     echo'<img src="'.$cheminf['Chemin1'].'"" alt="tableau" height="90%" width="40%">';
+      echo'<div class="description-card">';
+      echo'  <h3>'.$dataobj['Nom'].'</h3>';
+       echo' <h4>'.$dataobj['Description'].'</h4>';
+       echo' <h5>Catégorie : '.$dataobj['Categorie'].'</h5>';
+       echo' <h5>Prix Initial :'.$dataobj['Prix'].'€</h5>';
+       echo' <h5>Plus haut prix proposé :'.$data['Prixactuel'].'</h5>';
+       echo'<h5>Fin de l enchère :'.$data['Finenchere'].'</h5>';
+     echo'</div>';
+    echo'</div>';
+}
+
+   
+
+
+    
+
+
+echo '</div>';
+$sql = connection("SELECT * FROM `offre` WHERE IDvendeur ='$_COOKIE[IDhumain]' AND NOT IDclient = 0 ");
+ echo' <h2 style="text-align: center">Négociation</h2>';
+
+  echo' <br>';
+ echo' <div class="card-list">';
+while($data = mysqli_fetch_assoc($sql))
+{
+  $result = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$data[IDobjet]'");
+  $dataobj = mysqli_fetch_assoc($result);
+  $cheminimg = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$dataobj[Nimage]'");
+  $cheminf= mysqli_fetch_assoc($cheminimg);
+
+
+   echo' <div class="object-card">';
+     echo'<img src="'.$cheminf['Chemin1'].'"" alt="tableau" height="90%" width="40%">';
+      echo'<div class="description-card">';
+      echo'  <h3>'.$dataobj['Nom'].'</h3>';
+       echo' <h4>'.$dataobj['Description'].'</h4>';
+       echo' <h5>Catégorie : '.$dataobj['Categorie'].'</h5>';
+       echo' <h5>Prix Proposé :'.$data['Prixnouveau'].'€</h5>';
+       echo' <h5>Statut :'.$data['statut'].'</h5>';
+
+        if($data['statut']=="Acheteur")
+        {
+          echo '<input type="button" id="submit" onclick="accepternontheoffre('.$dataobj['ID'].',accepter)" value="Accepter offre">';
+          echo '<input type="button" id="submit" onclick="Updatetheoffre('.$dataobj['ID'].')" value="Faire une offre">';
+          echo '<input type="button" id="submit" onclick="accepternontheoffre('.$dataobj['ID'].',refuser)" value="Décliner offre">';
+        }
+        
+     echo'</div>';
+    echo'</div>';
+}
+
+   
+ ?>
+
+        
       </div>
     </div>
 

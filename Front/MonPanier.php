@@ -156,7 +156,7 @@ include("../Back/ConnexionServeur.php");
                   echo '<div class="col-sm-6">';
                   if($data['statut'] == 'Vendeur')
                   {
-                           echo '<h6 class="text-left"><aonclick="Updatethemoney('.$data2['IDobjet'].')"" id="Supp">Proposer une nouvelle offre</a></h6>';
+                           echo '<h6 class="text-left"><a onclick="Updatethemoney('.$data['IDobjet'].')" id="Supp">Proposer une nouvelle offre</a></h6>';
                   }
                   else
                   {
