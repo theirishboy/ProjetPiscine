@@ -2,6 +2,8 @@
   session_start();
   include("../Back/ConnexionServeur.php");
   include("Fonction.php");
+    $categorie=$_GET['ID'];
+
 ?>
 
 
@@ -25,9 +27,10 @@
     include("nav.php");
 ?>
 <div class="container text-center">  
-<h2>Catégorie : Ferraille et Trésor</h2><br>
+<h2> <?php echo "$categorie"; ?></h2><br>
 <?php 
-listobjet("Ferraille ou Tresor");
+
+  listobjet("$categorie");
 
  ?>
 </div>

@@ -18,12 +18,11 @@ if($mdp != $Mot_de_passe)
 }
 else
 {
-	$req = "INSERT INTO `humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `Mail`, `Media`) VALUES (NULL, '$Nom', '$Prenom', '$login', PASSWORD('$mdp'), '$Mail','6');";
+	$req = "INSERT INTO `humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, `Mail`, `Nimage`) VALUES (NULL, '$Nom', '$Prenom', '$login', PASSWORD('$mdp'), '$Mail','6');";
 	$result = connection($req); 
 	$detection= "SELECT ID FROM `humain` WHERE `humain`.`Nom` = '$Nom'";
 	$result = connection($detection);
 	$data = mysqli_fetch_assoc($result);
-	echo $data['ID'];
 	if($_POST['Type'] == "Vendeur")
 	{
 
@@ -32,6 +31,7 @@ else
 	}
 	if($_POST['Type'] == "Client")
 	{
+		echo "ui";
 		$AdresseL1 = isset($_POST["AdresseL1"])? $_POST["AdresseL1"] : "";
 		$AdresseL2 = isset($_POST["AdresseL2"])? $_POST["AdresseL2"] : "";
 		$Ville = isset($_POST["Ville"])? $_POST["Ville"] : "";
@@ -45,8 +45,6 @@ else
 
 		$DateExpiration = isset($_POST["DateExpiration"])? $_POST["DateExpiration"] : "";
 		$Code = isset($_POST["Code"])? $_POST["Code"] : "";
-
-		echo "$DateExpiration";
 		$req ="INSERT INTO `client` (`Humain`, `N_Telephone`, `Pays`, `Ville`, `Code_Postal`, `AdresseL1`, `AdresseL2`, `Type_de_carte`, `Numero_de_carte`, `Nomcarte`, `Dateexpi`, `Codesecu`) VALUES ('$data[ID]', '$N_Telephone', '$Pays', '$Ville', '$Code_Postal', '$AdresseL1', '$AdresseL2', '$Type_Carte', '$N_Carte', '$NomCarte', '$DateExpiration', '$Code');";
 		$result = connection($req); 
 	}

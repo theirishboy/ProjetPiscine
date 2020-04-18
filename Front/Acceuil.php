@@ -51,7 +51,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img id="imageCarrousel" src="Images/VaseAsie.jpg" alt="Vase1">
+        <img id="imageCarrousel" src="Images/Musee3.1.jpg" alt="Vase1">
         <div class="carousel-caption">
           <h2>Economisez 100 € !</h2>
         </div>      

@@ -8,6 +8,7 @@
 	-webkit-box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.75);
+
 }
 .object-card:hover {
 	opacity: 1;
@@ -18,15 +19,25 @@
 }
 
 .description-card {
-	display: flex;
 	flex-direction: column;
 	margin-left: 10px;
 }
-.description-card > h3 {
-	margin-bottom: 3px;
+
+input[id=submit] {
+    width: 80%;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
-.description-card > h5 {
-	margin-bottom: 30px;
+
+input[id=submit]:hover {
+    background-color: white;
+    color: rgba(0,0,0,0.6);
+    border: 1px solid rgba(0,0,0,0.6);
 }
 
 h2 {
