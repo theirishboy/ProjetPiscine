@@ -28,34 +28,44 @@ else
 	
 	$req = "SELECT * FROM `vendeur`";
 	$result = connection($req); 
-	$data2 = mysqli_fetch_assoc($result);
-
-	if($data['ID'] == $data2['Humain'])
+	while($data2 = mysqli_fetch_assoc($result))
 	{
-		$statut= "vendeur";
+		if($data['ID'] == $data2['Humain'])
+		{
+						echo "oui";
+
+			$statut= "vendeur";
+		}
 	}
 	$req = "SELECT * FROM `client`";
 	$result = connection($req); 
-	$data2 = mysqli_fetch_assoc($result);
-	if($data['ID'] == $data2['Humain'])
+	while($data2 = mysqli_fetch_assoc($result))
 	{
+		echo $data2['Humain'];
+		if($data['ID'] == $data2['Humain'])
+		{
+			echo "oui";
 
-		$statut= "client";
+			$statut= "client";
+		}
 	}
 	$req = "SELECT * FROM `admin`";
 	$result = connection($req); 
-	$data2 = mysqli_fetch_assoc($result);
-	if($data['ID'] == $data2['Humain'])
+	while($data2 = mysqli_fetch_assoc($result))
 	{
+		if($data['ID'] == $data2['Humain'])
+		{
 
-		$statut= "admin";
+			$statut= "admin";
+		}
 	}
+	
 	setcookie('login',$login);
 	setcookie('mdp',$mdp);
 	setcookie('statut',$statut);
 	setcookie('IDhumain',$IDhumain);
 
-	echo $_COOKIE['IDhumain'];
+
 	header("Location: Front/Acceuil.php");
 }
 
