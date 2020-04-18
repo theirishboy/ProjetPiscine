@@ -19,8 +19,7 @@ if($data['Prixactuel'] < $offre)
 {
 	if($offre > $data['Prixmax'])
 	{
-		$prixmax = $data['Prixmax'];
-		echo "$prixmax";
+		$prixmax = $data['Prixmax']+1;
 		$actualisation = connection("UPDATE `enchere` SET `Prixmax`='$offre' WHERE `IDobjet`='$IDobjet' ");
 		$actualisation = connection("UPDATE `enchere` SET `Prixactuel`='$prixmax' WHERE `IDobjet`='$IDobjet' ");
 	}
@@ -30,7 +29,7 @@ if($data['Prixactuel'] < $offre)
 		$actualisation = connection("UPDATE `enchere` SET `Prixactuel`='$offre'WHERE `IDobjet`='$IDobjet' ");
 	}
 }
-//Header("Location: ../Front/MonPanier.php");
+Header("Location: ../Front/MonPanier.php");
 
 
 ?>

@@ -88,6 +88,9 @@ include("../Back/ConnexionServeur.php");
               $sql = connection("SELECT *,MAX(Prixmax) FROM `enchere` WHERE `IDobjet`='$data[IDobjet]'");
               $dataMoneyyy = mysqli_fetch_assoc($sql); 
 
+              $sql2 = connection("SELECT * FROM `enchere` WHERE `IDobjet`='$data[IDobjet]' AND `IDclient` = '$_COOKIE[IDhumain]'");
+              $dataMoneyyy2 = mysqli_fetch_assoc($sql2); 
+
 
               echo '<div class="row" id="Item">'; //ligne de l'item
                 echo '<div class="col-sm-12">'; // Colonne 12 des items
@@ -109,8 +112,9 @@ include("../Back/ConnexionServeur.php");
                   echo '<h6 class="text-left"><a onclick="Reenvoietonbiff('.$data['IDobjet'].')" id="Supp">Enchérir</a></h6>';
                   echo '</div>';
                   echo '<div class="col-sm-6">';
-                  echo '<h5 class="text-right"><b>'.$dataMoneyyy['Prixactuel'].' €</b></h5>';
-                  echo '</div>';
+                  echo '<h5 class="text-right"><b>Mon offre :'.$dataMoneyyy2['Monoffre'].' €</b></h5>';
+                  echo '<h5 class="text-right"><b>Le prix actuel : '.$dataMoneyyy['Prixactuel'].' €</b></h5>';
+                  echo '</div>'; 
                   echo '</div>'; 
                   echo '</div>'; //ferme ma colonne 10
                 echo '</div>'; //ferme ma colonne 12
