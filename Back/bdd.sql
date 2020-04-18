@@ -25,8 +25,8 @@ INSERT INTO `ebayece`.`humain` (`ID`, `Nom`, `Prenom`, `Login`, `Mot_de_passe`, 
 
 INSERT INTO `ebayece`.`admin` (`Humain`) VALUES ('2');
 INSERT INTO `ebayece`.`vendeur` (`Humain`) VALUES ('3');
-INSERT INTO `ebayece`.`client` (`Humain`, `N_Telephone`,`Pays`,`Ville`, `Code_Postal`, `AdresseL1`, `AdresseL2`, `Type_de_carte`, `Numero_de_carte`,`Nomcarte`,`Dateexpi`,`Codesecu`) VALUES ('1','0648759628', 'France','Paris', '75011', '115 avenue Philippe Auguste', '', 'Mastercard', '751221596233659','Gabriel','2021-05-19','359');
-INSERT INTO `ebayece`.`client` (`Humain`, `N_Telephone`,`Pays`,`Ville`, `Code_Postal`, `AdresseL1`, `AdresseL2`, `Type_de_carte`, `Numero_de_carte`,`Nomcarte`,`Dateexpi`,`Codesecu`) VALUES ('4','0648759628', 'France','Paris', '75011', '115 avenue Philippe Auguste', '', 'Mastercard', '751221596233659','Gabriel','2021-05-19','359');
+INSERT INTO `ebayece`.`client` (`Humain`, `N_Telephone`,`Pays`,`Ville`, `Code_Postal`, `AdresseL1`, `AdresseL2`, `Type_de_carte`, `Numero_de_carte`,`Nomcarte`,`Dateexpi`,`Codesecu`,`PorteMonnaie`) VALUES ('1','0648759628', 'France','Paris', '75011', '115 avenue Philippe Auguste', '', 'Mastercard', '751221596233659','Gabriel','2021-05-19','359','10000');
+INSERT INTO `ebayece`.`client` (`Humain`, `N_Telephone`,`Pays`,`Ville`, `Code_Postal`, `AdresseL1`, `AdresseL2`, `Type_de_carte`, `Numero_de_carte`,`Nomcarte`,`Dateexpi`,`Codesecu`,`PorteMonnaie`) VALUES ('4','0648759628', 'France','Paris', '75011', '115 avenue Philippe Auguste', '', 'Mastercard', '751221596233659','Gabriel','2021-05-19','359','15000');
 
 INSERT INTO `ebayece`.`objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`,`Nimage`) VALUES ('1', 'Bijoux de la reine Marie Tudor', 'Bijoux de la reine Marie Alisa bloody Mary', 'Bon pour le musee', 'Enchere', '450','4');
 INSERT INTO `ebayece`.`objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`,`Nimage`) VALUES ('2', '6 pieces or', 'Lot de 6 pieces de 20 francs en or coq de Chaplain de 1907 et une 1912', 'Ferraille ou Tresor', 'Enchere', '1500 ','1');

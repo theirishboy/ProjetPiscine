@@ -38,14 +38,14 @@ else
 		$Code_Postal = isset($_POST["Code_Postal"])? $_POST["Code_Postal"] : "";
 		$Pays = isset($_POST["Pays"])? $_POST["Pays"] : "";
 		$N_Telephone = isset($_POST["N_Telephone"])? $_POST["N_Telephone"] : "";
-
 		$Type_Carte = isset($_POST["Type_Carte"])? $_POST["Type_Carte"] : "";
 		$N_Carte = isset($_POST["N_Carte"])? $_POST["N_Carte"] : "";
 		$NomCarte = isset($_POST["NomCarte"])? $_POST["NomCarte"] : "";
 		$PorteMonnaie = isset($_POST["PorteMonnaie"])? $_POST["PorteMonnaie"] : "";
+
 		$DateExpiration = isset($_POST["DateExpiration"])? $_POST["DateExpiration"] : "";
 		$Code = isset($_POST["Code"])? $_POST["Code"] : "";
-		$req ="INSERT INTO `client` (`Humain`, `N_Telephone`, `Pays`, `Ville`, `Code_Postal`, `AdresseL1`, `AdresseL2`, `Type_de_carte`, `Numero_de_carte`, `Nomcarte`, `Dateexpi`, `Codesecu`,`PorteMonnaie`) VALUES ('$data[ID]', '$N_Telephone', '$Pays', '$Ville', '$Code_Postal', '$AdresseL1', '$AdresseL2', '$Type_Carte', '$N_Carte', '$NomCarte', '$DateExpiration', '$Code','$PorteMonnaie');";
+		$req ="INSERT INTO client (Humain, N_Telephone, Pays, Ville, Code_Postal, AdresseL1, AdresseL2, Type_de_carte, Numero_de_carte, Nomcarte, Dateexpi, Codesecu,`PorteMonnaie`) VALUES ('$data[ID]', '$N_Telephone', '$Pays', '$Ville', '$Code_Postal', '$AdresseL1', '$AdresseL2', '$Type_Carte', '$N_Carte', '$NomCarte', '$DateExpiration', '$Code','$PorteMonnaie');";
 		$result = connection($req); 
 	}
 	header("Location: ../Front/Connexion.php");

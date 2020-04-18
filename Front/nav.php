@@ -141,7 +141,7 @@
       {
         
         echo '<ul class="nav navbar-nav navbar-right">';
-        echo '<li><a href="../Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>';
+        echo '<li><a href="../Front/Connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion </a></li>';
         echo '</ul>';
       }
      
