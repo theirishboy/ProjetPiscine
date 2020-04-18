@@ -18,54 +18,73 @@
     ?>
 
     <h1 style="text-align: center">Mes ventes en cours</h1>
-    <h2>Enchères</h2>
+  <h2>Enchères</h2>
+  <br>
+  <div class="card-list">
     <div class="object-card">
-        <img src="Images/tableau2.jpg" alt="tableau" width="160px">
-        <div class="description-card">
-            <h3>Le port de Collioure</h3>
-            <h4>Henri MARTIN (1860 - 1943)</h4>
-            <h5>Catégorie : Bon pour le musée</h5>
-            <h5>Valeur : 70 000€</h5>
-            <h5>Plus haut prix proposé : 132 000€</h5>
-            <input id="submit"
-              type="button"
-              value="Vendre maintenant">
-        </div>
+      <img src="Images/tableau2.jpg" alt="tableau" height="90%" width="40%">
+      <div class="description-card">
+        <h3>Le port de Collioure</h3>
+        <h4>Henri MARTIN</h4>
+        <h5>Catégorie : Bon pour le musée</h5>
+        <h5>Valeur : 70 000€</h5>
+        <h5>Plus haut prix proposé : 132 000€</h5>
+        <input id="submit"
+          type="button"
+          value="Vendre maintenant">
+      </div>
     </div>
-
     <div class="object-card">
-        <img src="Images/tableau2.jpg" alt="tableau" width="160px">
-        <div class="description-card">
-            <h3>Le port de Collioure</h3>
-            <h4>Henri MARTIN (1860 - 1943)</h4>
-            <h5>Catégorie : Bon pour le musée</h5>
-            <h5>Valeur : 70 000€</h5>
-            <h5>Plus haut prix proposé : 32 000€</h5>
-            <input id="submit"
-              type="button"
-              value="Vendre maintenant">
-        </div>
+      <img src="Images/tableau3.jpg" alt="tableau" height="90%" width="40%">
+      <div class="description-card">
+        <h3>Original Portrait</h3>
+        <h4>Tony Curtis</h4>
+        <h5>Catégorie : Bon pour le musée</h5>
+        <h5>Valeur : 5 900€</h5>
+        <h5>Plus haut prix proposé : 17 000€</h5>
+        <input id="submit"
+          type="button"
+          value="Vendre maintenant">
+      </div>
     </div>
+    <div class="object-card">
+      <img src="Images/tableau4.jpg" alt="tableau" height="90%" width="40%">
+      <div class="description-card">
+        <h3>Fruit Morte Vie</h3>
+        <h4>Raya Sorkine</h4>
+        <h5>Catégorie : Bon pour le musée</h5>
+        <h5>Valeur : 3 500€</h5>
+        <h5>Plus haut prix proposé : 11 600€</h5>
+        <input id="submit"
+          type="button"
+          value="Vendre maintenant">
+      </div>
+    </div>
+  </div>
 
     <br>
 
-    <h2>Meilleures offres</h2>
+  <h2>Meilleures offres</h2>
+  <div class="card-list">
     <div class="object-card">
-        <img src="Images/piecefoot.jpg" alt="tableau" height ="200px" width="200px">
-        <div class="description-card">
-            <h3>Pièce 2€ commémorative UEFA EURO 2016</h3>
-            <h5>Catégorie : Feraille ou trésor</h5>
-            <h5>Valeur : 100€</h5>
-            <h5>Prix proposé par le client : 75€</h5>
-            <input id="submit"
-              type="button"
-              value="Accepter le prix proposé">
-
-              <input id="submit"
-              type="button"
-              value="Decliner l'offre">
-        </div>
+      <img src="Images/piecefoot.jpg" alt="tableau" height="50%" width="40%">
+      <div class="description-card">
+        <h3>Pièce 2€ commémorative UEFA EURO 2016</h3>
+        <h5>Catégorie : Feraille ou trésor</h5>
+        <h5>Valeur : 100€</h5>
+        <h5>Prix proposé par le client : 75€</h5>
+        <input id="submit"
+          type="button"
+          value="Accepter le prix proposé">
+  
+          <input id="submit"
+          type="button"
+          value="Decliner l'offre">
+      </div>
     </div>
+
+    
+  </div>
 
     <br>
     <br>

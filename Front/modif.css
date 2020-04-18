@@ -2,10 +2,6 @@ body {
   background-color: rgba(64,128,128,0.3);
 }
 
-.inline {
-   display: inline;
-}
-
 .frame {
 width: 150px;
 height: 150px;

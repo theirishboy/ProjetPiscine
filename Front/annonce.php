@@ -45,8 +45,15 @@
     </textarea>
 
     </div>
+
+
+    <br><div class="col-lg-offset-3 col-lg-2">
+      <img src="" alt="image" width="160px">
+     <br> <img src="" alt="image" width="160px">
+    </div>
+
     
-    <div class="col-lg-offset-7 col-lg-3">
+    <div class="col-lg-offset-2 col-lg-3">
       
       <h5>Choix de vente</h5>
       <td><input type="radio" name="vente" value="achat">
@@ -59,10 +66,8 @@
 
 <br><br><br><br>
 
-      <label for="avatar">Importer une photo</label>
-      <p align="right"><input type="file"
-       id="avatar" name="avatar"
-       accept="image/png, image/jpeg"></p>
+      <label for="avatar">Importer une image</label>
+      <p align="right"><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"></p>
 
 <br><br>
 
