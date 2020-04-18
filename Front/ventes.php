@@ -23,7 +23,7 @@
         <img src="Images/tableau2.jpg" alt="tableau" width="160px">
         <div class="description-card">
             <h3>Le port de Collioure</h3>
-            <h4>Henri MARTIN (1860 - 1943)</h4>
+            <h4>Henri MARTIN</h4>
             <h5>Catégorie : Bon pour le musée</h5>
             <h5>Valeur : 70 000€</h5>
             <h5>Plus haut prix proposé : 132 000€</h5>
@@ -34,13 +34,13 @@
     </div>
 
     <div class="object-card">
-        <img src="Images/tableau2.jpg" alt="tableau" width="160px">
+        <img src="Images/tableau3.jpg" alt="tableau" width="160px">
         <div class="description-card">
-            <h3>Le port de Collioure</h3>
-            <h4>Henri MARTIN (1860 - 1943)</h4>
+            <h3>Original Portrait</h3>
+            <h4>Tony Curtis</h4>
             <h5>Catégorie : Bon pour le musée</h5>
-            <h5>Valeur : 70 000€</h5>
-            <h5>Plus haut prix proposé : 32 000€</h5>
+            <h5>Valeur : 5 900€</h5>
+            <h5>Plus haut prix proposé : 17 000€</h5>
             <input id="submit"
               type="button"
               value="Vendre maintenant">
