@@ -1,0 +1,35 @@
+<?php 
+
+
+session_start(); 
+include("ConnexionServeur.php"); 
+$ID = $_GET['ID'];
+
+$sql = connection("SELECT * FROM `enchere` WHERE `IDvendeur` = '$ID'");
+if (mysqli_num_rows($sql)!=0)
+{
+	$supp= mysqli_fetch_assoc($sql);
+
+	$sql = connection("DELETE FROM `enchere` WHERE `IDvendeur` = '$ID'");
+
+}
+
+$sql = connection("SELECT * FROM `offre` WHERE `IDvendeur` = '$ID'");
+if (mysqli_num_rows($sql)!=0)
+{
+	$supp= mysqli_fetch_assoc($sql);
+	$sql = connection("DELETE FROM `offre` WHERE `IDvendeur` = '$ID'");
+
+}
+$sql = connection("DELETE FROM `objet art` WHERE `IDvendeur` = '$ID'");
+$sql = connection("DELETE FROM `vendeur` WHERE `Humain` = '$ID'");
+$sql = connection("DELETE FROM `humain` WHERE `ID` = '$ID'");
+
+
+header("location: ../Front/AdminVendeur.php");
+
+
+
+
+
+ ?>

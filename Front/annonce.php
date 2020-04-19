@@ -15,12 +15,13 @@
 
   <?php
   include("nav.php");
+$Bonjour = isset($_GET["Bonjour"])? $_GET["Bonjour"] : "";
   ?>
 
   <h1 style="text-align: center">Déposer votre annonce</h1>
 
       <div class="container">
-  <form method="post" action="../Back/Deposeannonce.php">
+  <form method="post" action="../Back/Deposeannonce.php?Bonjour=<?php if(isset($Bonjour)){echo "$Bonjour"; }?>">
 
         <div class="row">
 

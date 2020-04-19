@@ -8,7 +8,7 @@ $Mail = isset($_POST["Mail"])? $_POST["Mail"] : "";
 $login = isset($_POST["Login"])? $_POST["Login"] : "";
 $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
 $Mot_de_passe = isset($_POST["Mot_de_passe"])? $_POST["Mot_de_passe"] : "";
-
+$statut = isset($_GET["statut"])? $_GET["statut"] : "";
 if($mdp != $Mot_de_passe)
 {
 	if($_POST['Type'] == "Client") 
@@ -48,7 +48,16 @@ else
 		$req ="INSERT INTO client (Humain, N_Telephone, Pays, Ville, Code_Postal, AdresseL1, AdresseL2, Type_de_carte, Numero_de_carte, Nomcarte, Dateexpi, Codesecu,`PorteMonnaie`) VALUES ('$data[ID]', '$N_Telephone', '$Pays', '$Ville', '$Code_Postal', '$AdresseL1', '$AdresseL2', '$Type_Carte', '$N_Carte', '$NomCarte', '$DateExpiration', '$Code','$PorteMonnaie');";
 		$result = connection($req); 
 	}
-	header("Location: ../Front/Connexion.php");
+	if($statut == 1)
+	{
+		header("Location: ../Front/AdminVendeur.php");
+
+	}
+	else
+	{
+		header("Location: ../Front/Connexion.php");
+
+	}
 }
 
 

@@ -23,14 +23,14 @@
     include("nav.php");
 ?>
 <?php
-  $item = connection("SELECT * FROM `objet art`");
+  $vendeur1 = connection("SELECT * FROM `vendeur`");
 
   echo '<div class="text-center">'; 
     echo '<div class="row">'; 
       echo '<h2 style="font-family:Comic Sans MS"><b>Liste des vendeurs sur le site</b></h2><br><br>';
     echo '</div>';
     echo '<div class="row">'; 
-      echo '<a href="CreateAccountVendeur.php" id="Add">Ajouter un vendeur </a><br><br><br>';
+      echo '<a href="CreateAccountVendeur.php?statut=1" id="Add">Ajouter un vendeur </a><br><br><br>';
     echo '</div>';
     echo '<div class="row">';
       echo '<div class="col-sm-12">';            
@@ -43,24 +43,29 @@
               echo '<th scope="col-sm-2" class="titre">Nom</th>';
               echo '<th scope="col-sm-2" class="titre">Pseudo</th>';
               echo '<th scope="col-sm-2" class="titre">Email</th>';
+              echo '<th scope="col-sm-2" class="titre">Action</th>';
+
             echo '</tr>';
           echo '</thead>';
           echo '<tbody>';
 
-/*
-  while($data = mysqli_fetch_assoc($item))
+
+  while($vendeur = mysqli_fetch_assoc($vendeur1))
   {
+
+      $humain = connection("SELECT * FROM `humain` WHERE `humain`.`ID`= '$vendeur[Humain]' ");
+      $data = mysqli_fetch_assoc($humain);
       $cheminimage = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data[Nimage]'");
       $chemin= mysqli_fetch_assoc($cheminimage);
 
           echo '<tr>';
             echo '<td><img id="imgItem" src="'.$chemin['Chemin1'].'" class="thumbnail" alt="Item"></td>';
+            echo '<td>'.$data['ID'].'</td>';
             echo '<td>'.$data['Nom'].'</td>';
-            echo '<td>'.$data['Description'].'</td>';
-            echo '<td>'.$data['Categorie'].'</td>';
-            echo '<td>'.$data['Type de vente'].'</td>';
-            echo '<td>'.$data['Prix'].' €</td>';
-            echo '<td><a href="../Back/Suppobjpanier.php?ID='.$data['ID'].'" id="Supp">Supprimer</a></td>';
+            echo '<td>'.$data['Prenom'].'</td>';
+            echo '<td>'.$data['Login'].'</td>';
+            echo '<td>'.$data['Mail'].'</td>';
+            echo '<td><a href="../Back/Supprimervendeur.php?ID='.$data['ID'].'" id="Supp">Supprimer</a></td>';
           echo '</tr>';
   }
 
@@ -75,7 +80,7 @@
               echo '<th scope="col-sm-1" class="titre"> </th>';
               echo '<th scope="col-sm-1" class="titre"> </th>';
             echo '</tr>';
-          echo '</thead>';*/
+          echo '</thead>';
       echo '</table>';    
     echo '</div>';
   echo '</div>';
