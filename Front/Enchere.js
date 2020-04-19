@@ -18,8 +18,7 @@ function Combienargent(id){
  }
    function accepternontheoffre(id,statut){
 
-    var chiffre = prompt("Entrer le montant que vous souhaitez", "");
-    window.location.href = "../Back/UpdateVendeur.php?statut=" + statut + "&id="+id;            
+    window.location.href = "../Back/Accepterdeclineroffre.php?statut=" + statut + "&id="+id;            
 
  }
  
