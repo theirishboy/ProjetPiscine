@@ -1,6 +1,11 @@
+body {
+  background-color: rgba(239,210,175,0.3);
+}
+
 .object-card {
 	display: flex;
 	width: 450px;
+	background-color: white;
 	padding: 10px;
 	margin-left: 100px;
 	border-radius: 5px;

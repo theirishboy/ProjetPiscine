@@ -203,7 +203,7 @@ include("../Back/ConnexionServeur.php");
             $portemonnaie = connection("SELECT `PorteMonnaie` FROM `client` WHERE `Humain` = '$_COOKIE[IDhumain]'");
             $dataPortemonnaie = mysqli_fetch_assoc($portemonnaie);
 
-            $tot = $totAchat + $totNégo;
+            $tot = $totAchat + $totNégo + $totEnch;
 
             echo '<div class="col-sm-5" id="fenetreCommande">';             // Colonne de la commande
             echo '<div class="row">';
@@ -241,7 +241,7 @@ include("../Back/ConnexionServeur.php");
             echo '</div>';
             echo '<div class="row">';
             echo '<div class="col-sm-9">';
-            echo '<h6 class="text-left">(Les enchères ne sont pas prises en compte car se règlent à la fin de l évènement.)</h6><br>';  
+            //echo '<h6 class="text-left">(Les enchères ne sont pas prises en compte car se règlent à la fin de l évènement.)</h6><br>';  
             echo '</div>';
             echo '</div>';
 
