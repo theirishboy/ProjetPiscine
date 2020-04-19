@@ -130,7 +130,7 @@ include("../Back/ConnexionServeur.php");
             //affichages négociations
             $result = connection("SELECT * FROM `offre` WHERE `offre`.`IDclient` = '$_COOKIE[IDhumain]'"); //récupère objets du panier de IDhumain connecté
 
-             while($data = mysqli_fetch_assoc($result))
+            while($data = mysqli_fetch_assoc($result))
             {      
               $objet = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$data[IDobjet]'");
               $data2 = mysqli_fetch_assoc($objet);
@@ -154,22 +154,43 @@ include("../Back/ConnexionServeur.php");
                   echo '</div>';
                   echo '<div class="row">';
                   echo '<div class="col-sm-6">';
-                  if($data['statut'] == 'Vendeur')
-                  {
-                           echo '<h6 class="text-left"><a onclick="Updatethemoney('.$data['IDobjet'].')" id="Supp">Proposer une nouvelle offre</a></h6>';
-                  }
-                  else
-                  {
-                      echo '<h5 class="text-left">Votre proposition est en cours de traitement</h5>';
-                  }
-                  echo '</div>';
-                  echo '<div class="col-sm-6">';
-                  echo '<h4 class="text-right"><b>Le prix est de :'.$data2['Prix'].' €</b></h4>';
                   $Prixpro = connection("SELECT `Prixnouveau` FROM `offre` WHERE `IDobjet` = '$data[IDobjet]' AND `IDclient` = '$_COOKIE[IDhumain]'");
                   $Prixprop= mysqli_fetch_assoc($Prixpro);
-                  echo '<h4 class="text-right"><b>Vous proposez :'.$Prixprop['Prixnouveau'].' €</b></h4>';
-                  echo '</div>';
-                  echo '</div>'; 
+                  if($data['NombreProposition'] == 5 && $data['statut'] == 'Vendeur')
+                  {
+                    echo '<h5 class="text-left">Votre proposition a été refusé vous ne pouvez plus négocier</h5>';
+                    echo '</div>';
+                    echo '<div class="col-sm-6">';
+                    echo '<h6 class="text-left"><a href="../Back/Accepterdeclineroffreclient.php?statut=2&id='.$data['IDobjet'].'" id="Supp"> Archiver offre</a></h6>';                 
+                   }
+                  else
+                  {
+
+
+                    if($data['statut'] == 'Vendeur')
+                    {
+                     echo '<h6 class="text-left"><a onclick="Updatethemoney('.$data['IDobjet'].')" id="Supp">Proposer une nouvelle offre</a></h6>';
+                     echo '<h6 class="text-left"><a href="../Back/Accepterdeclineroffreclient.php?statut=1&id='.$data['IDobjet'].'" id="Supp">Accepter offre</a></h6>';
+                     echo '<h6 class="text-left"><a href="../Back/Accepterdeclineroffreclient.php?statut=2&id='.$data['IDobjet'].'" id="Supp">Abandonner offre</a></h6>';
+                     echo '</div>';
+                     echo '<div class="col-sm-6">';
+                     echo '<h4 class="text-right"><b>On vous propose :'.$Prixprop['Prixnouveau'].' €</b></h4>';
+
+                   }
+                   else
+                   {
+                    echo '<h5 class="text-left">Votre proposition est en cours de traitement</h5>';
+                    echo '</div>';
+                    echo '<div class="col-sm-6">';
+                    echo '<h4 class="text-right"><b>Vous proposez :'.$Prixprop['Prixnouveau'].' €</b></h4>';
+
+                  }
+                }
+                
+                echo '<h4 class="text-right"><b>Le prix est de :'.$data2['Prix'].' €</b></h4>';
+                
+                echo '</div>';
+                echo '</div>'; 
                   echo '</div>'; //ferme ma colonne 10
                 echo '</div>'; //ferme ma colonne 12
               echo '</div><br>'; //ferme la ligne de l'item
@@ -246,10 +267,10 @@ include("../Back/ConnexionServeur.php");
             echo '<div class="row">';
             echo '<div class="col-sm-12" style="text-align: center;">';
             if($tot > $dataPortemonnaie['PorteMonnaie']){
-                echo '<button id="Finaliser" onclick="PaiementImpossible()"><b>Passer au paiement</b></button>';
+              echo '<button id="Finaliser" onclick="PaiementImpossible()"><b>Passer au paiement</b></button>';
             }
             elseif($tot <= $dataPortemonnaie['PorteMonnaie']) {
-                echo '<a href="Paiement.php?tot='.$tot.'"><button id="Finaliser"><b>Passer au paiement</b></button></a>';
+              echo '<a href="Paiement.php?tot='.$tot.'"><button id="Finaliser"><b>Passer au paiement</b></button></a>';
             }
             echo '</div>';
             echo '</div>';  

@@ -10,6 +10,9 @@ $ID = $_GET['id'];
 if($statut == 1)
 {
 		$sql=connection("INSERT INTO objetvendu (Objet, IDclient, IDvendeur, Prix) SELECT `IDobjet`, IDclient, IDvendeur, Prixnouveau FROM offre where `IDobjet` = '$ID' AND IDclient != ''");
+		$delete=connection("DELETE FROM `offre` WHERE `IDobjet` = '$ID'");
+		$delete=connection("DELETE FROM `objet art` WHERE `IDobjet` = '$ID'");
+
 }
 else
 {

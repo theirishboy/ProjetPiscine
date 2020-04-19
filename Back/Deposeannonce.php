@@ -13,13 +13,11 @@ $photo =  isset($_POST["avatar"])? $_POST["avatar"] : "";
 $Prix =  isset($_POST["Prix"])? $_POST["Prix"] : "";
 $date =  isset($_POST["date"])? $_POST["date"] : "";
 $time =  isset($_POST["time"])? $_POST["time"] : "";
-
+$Bonjour = isset($_GET["Bonjour"])? $_GET["Bonjour"] : "";
+echo $Bonjour;
 $datetime=$date." ".$time;
-echo "$datetime";
 
-echo "$photo";
 $photoR = "Images/"."$photo";
-echo "$photoR";
 $sql=connection("INSERT INTO `images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES (NULL, '$photoR', '', '')");
 $sql=connection("SELECT `ID` FROM `images` WHERE `images`.`Chemin1` ='$photoR'");
 $data2=mysqli_fetch_assoc($sql);
@@ -41,6 +39,10 @@ if($Choixvente = "Enchere")
 	echo "$datetime";
 	$sql=connection("INSERT INTO `enchere` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel`, `Prixmax`, `Monoffre`, `Finenchere`) VALUES ('$data[ID]', '0', '$_COOKIE[IDhumain]', '$Prix', '$Prix', '$Prix', '$datetime')");
 }
-header("location: ../Front/Acceuil.php")
+if($Bonjour == 1)
+{
+	header("location: ../Front/Adminitem.php");
+}
+//header("location: ../Front/Acceuil.php");
 
 ?>

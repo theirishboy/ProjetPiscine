@@ -30,7 +30,7 @@
       echo '<h2 style="font-family:Comic Sans MS"><b>Liste des items disponibles sur le site</b></h2><br><br>';
     echo '</div>';
     echo '<div class="row">'; 
-      echo '<a href="AjoutObjet.php" id="Add">Ajouter un item</a><br><br><br>';
+      echo '<a href="annonce.php?Bonjour=1" id="Add">Ajouter un item</a><br><br><br>';
     echo '</div>';
     echo '<div class="row">';
       echo '<div class="col-sm-12">';            
@@ -61,7 +61,7 @@
             echo '<td>'.$data['Categorie'].'</td>';
             echo '<td>'.$data['Type de vente'].'</td>';
             echo '<td>'.$data['Prix'].' €</td>';
-            echo '<td><a href="../Back/Suppobjpanier.php?ID='.$data['ID'].'" id="Supp">Supprimer</a></td>';
+            echo '<td><a href="../Back/Backadmin.php?ID='.$data['ID'].'" id="Supp">Supprimer</a></td>';
           echo '</tr>';
   }
 

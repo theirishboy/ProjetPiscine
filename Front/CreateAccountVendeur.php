@@ -16,13 +16,14 @@
 
 <?php
     include("nav.php");
+    $statut = isset($_GET["statut"])? $_GET["statut"] : "";
 ?>
 
 <! -- http://www.codeurjava.com/2016/12/formulaire-de-login-avec-html-css-php-et-mysql.html -->
 
 <div id="fenetre">
        
-  <form action="../Back/inscription.php" method="POST">
+  <form action="../Back/inscription.php?statut=<?php if(isset($statut)){echo "$statut"; }?>" method="POST">
     <div id="Coordo">
       <h5 class="text-center">Vous êtes nouveau !</h5>
       <h2 class="text-center">Créer votre compte</h2><br>
@@ -42,13 +43,22 @@
       <input type="text" placeholder="Identifiant" name="Login" required>
 
       <h5><b>Votre mot de passe équivaut à votre adresse mail</b></h5><br>
-      <div>
-        <input type="checkbox" id="Conditions" required="required">
-        <label for="subscribeNews">En créant un compte vous accepter les <u>Conditions générales</u> et <u>Politique de confidentialité</u> de Ebay ECE.</label>
-      </div>
+      <?php 
+      if($statut==1)
+      {
 
-      <input type="submit" id='submit' value='Créer le compte vendeur'><br><br>
+      }
+      else
+      {
+         echo' <div>';
+        echo'<input type="checkbox" id="Conditions" required="required">';
+        echo'<label for="subscribeNews">En créant un compte vous accepter les <u>Conditions générales</u> et <u>Politique de confidentialité</u> de Ebay ECE.</label>';
+     echo '</div>';
+      }
+          
 
+       echo '<input type="submit" id="submit" value="Créer le compte vendeur"><br><br>';
+      ?>
       <?php
       if(isset($_GET['erreur'])){
         $err = $_GET['erreur'];
