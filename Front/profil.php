@@ -16,7 +16,7 @@
 <?php
     include("nav.php");
 ?>
-
+<br><br>
 <div class="container-fluid text-center">
 <div class="frame">
 <img src="Images/profil.jpg" class ="display" alt="profil" height="200px" width="200px">
@@ -30,17 +30,17 @@
 	<input id="submit"
          type="button"
          value="Vendre un article"
-         onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/annonce.php'>
+         onclick=window.location.href='annonce.php'>
 	   
 	<input id="submit"
          type="button"
          value="Objets vendus"
-         onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/objets.php'>
+         onclick=window.location.href='objets.php'>
        
 	<input id="submit"
          type="button"
          value="Modifier mes informations"
-         onclick=window.location.href='C:/Users/Rayan/Desktop/ProjetInfo/modif.php'>    
+         onclick=window.location.href='modif.php'>    
  </div>     
 
 <br><br><br><br>

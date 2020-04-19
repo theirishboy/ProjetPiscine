@@ -24,11 +24,13 @@
         <img src="Images/tableau2.jpg" alt="tableau" width="160px">
         <div class="description-card">
             <h3>Le port de Collioure</h3>
-            <h5>Henri MARTIN (1860 - 1943)</h5>
-            <h6>Prix : 70 000€</h6>
+            <h5>Henri MARTIN</h5>
+            <h6>Valeur : 70 000€</h6>
             <h6>Type de vente : Enchère</h6>
         </div>
     </div>
+
+    <br><br>
 
     <?php
         include("footer.php");

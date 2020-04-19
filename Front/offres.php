@@ -28,7 +28,7 @@
     <img src="Images/piecefoot.jpg" class="center" alt="piece" height="200px" width="200px"> 
     <div class="caption">
     <br><p>Piece de 2 euros commemorative France 2016 <br> commemore la compétion de football de l'Euro 2016</p>
-    <br><br>100€</div>
+    100€</div>
     </div>
 </div>
 </div>
