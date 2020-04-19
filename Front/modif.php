@@ -136,6 +136,25 @@
 </div>
 </div>
 
+<FORM Method="post" Action="modif.php">
+
+  Prénom : <INPUT type=text size=20 name=prénom><br>
+  Nom : <INPUT type=text size=20 name=nom><br>
+  Pseudo : <INPUT type=text size=20 name=pseudo><br>
+  Adresse e-mail : <INPUT type=text size=30 name=mail><br>
+  Mot de passe : <INPUT type=text size=30 name=mdp><br>
+  Adresse 1 : <INPUT type=text size=20 name=adresse1><br>
+  Adresse 2 : <INPUT type=text size=20 name=adresse2><br>
+  Ville : <INPUT type=text size=20 name=ville><br>
+  Code Postal : <INPUT type=text size=20 name=codepostal><br>
+  Pays : <INPUT type=text size=20 name=pays><br>
+  N° de téléphone : <INPUT type=text size=10 name=téléphone><br>
+  <INPUT type=submit value=envoyer>
+  <INPUT type=hidden name=afficher value=ok>
+
+</FORM>
+
+
 <br>
 
 <?php

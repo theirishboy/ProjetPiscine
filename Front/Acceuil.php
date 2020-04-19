@@ -26,20 +26,6 @@
 ?>
 
 <div class="container">    
-  <div class="row">       
-    <div class="col-lg-offset-10 col-lg-1">
-      <form>
-        <br>
-        <div id="barre_recherche">
-          <input id="texte_recherche" type="text" value="Rechercher" />
-          <input id="bouton" type="image" src="Images/recherche.png" height="24" alt="Rechercher" />
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div class="container">    
   <h2>Promotions exceptionnelles</h2><br></div>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">

@@ -106,7 +106,12 @@
       <?php if(isset($_COOKIE['statut']))
       {
           if($_COOKIE['statut']=='client'){
+
+            $portemonnaie = connection("SELECT `PorteMonnaie` FROM `client` WHERE `Humain` = '$_COOKIE[IDhumain]'");
+            $dataPortemonnaie = mysqli_fetch_assoc($portemonnaie);
+
             echo '<ul class="nav navbar-nav navbar-right">';
+            echo '<li><a href="#" id="title"><img src="Images/PorteMonnaie.png" height="30">'.$dataPortemonnaie['PorteMonnaie'].' €</a></li>';
             echo '<li><a href="MonPanier.php"><img src="Images/panier.png" height="25"></a></li>';
             echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
             echo '</ul>';
@@ -114,15 +119,18 @@
 
           if($_COOKIE['statut']=='vendeur'){
             echo '<ul class="nav navbar-nav navbar-right">';
-            echo '<li><a href="ventes.php"><img src="Images/mesVentes.png" height="30"></a></li>';
+            echo '<li><a href="annonce.php" id="title"><img src="Images/ListeItem.png" height="30">  Ajouter un item</a></li>';
+            echo '<li><a href="ventes.php" id="title"><img src="Images/mesVentes.png" height="30">  Mes ventes en cours</a></li>';
+            echo '<li><a href="objets.php" id="title"><img src="Images/Liste.png" height="28">  Mes items vendus</a></li>';
+            echo '<li><a href="profil.php" id="title"><img src="Images/profil.png" height="32"></a></li>';
             echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
             echo '</ul>';
           }
 
           if($_COOKIE['statut']=='admin'){
             echo '<ul class="nav navbar-nav navbar-right">';
-            echo '<li><a href="AdminVendeur.php" id="title"><img src="Images/ListeVendeur.png" height="28">  Liste Vendeurs</a></li>';
-            echo '<li><a href="AdminItem.php" id="title"><img src="Images/ListeItem.png" height="25">  Liste Items</a></li>';
+            echo '<li><a href="AdminVendeur.php" id="title"><img src="Images/Liste.png" height="28">  Liste Vendeurs</a></li>';
+            echo '<li><a href="AdminItem.php" id="title"><img src="Images/ListeItem.png" height="30">  Liste Items</a></li>';
             echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';
             echo '</ul>';
           }
