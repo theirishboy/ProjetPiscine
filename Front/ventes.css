@@ -1,6 +1,11 @@
+body {
+  background-color: rgba(239,210,175,0.3);
+}
+
 .object-card {
 	display: flex;
 	width: 30%;
+	background-color: white;
 	padding: 10px;
 	border-radius: 5px;
 	opacity: 0.85;

@@ -61,19 +61,19 @@ INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('4','Images/BijouxMt1','Images/BijouxMT2','Images/BijouxMt3');
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('5','Images/Biere1','Images/Biere2','Images/Biere3');
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('6','Images/Biere21','Images/Biere22','Images/Biere23');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('7','Images/VIP1.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('8','Images/VIP2.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('9','Images/VIP3.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('10','Images/VIP4.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('11','Images/VIP5.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('12','Images/VIP6.1','','');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('7','Images/VIP1.1','Images/VIP1.2','Images/VIP1.3');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('8','Images/VIP2.1','Images/VIP2.3','Images/VIP2.4');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('9','Images/VIP3.1','Images/VIP3.2','Images/VIP3.3');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('10','Images/VIP4.1','Images/VIP4.2','Images/VIP4.3');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('11','Images/VIP5.1','Images/VIP5.2','Images/VIP5.5');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('12','Images/VIP6.1','Images/VIP6.2','Images/VIP6.4');
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('13','Images/VIP7.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('14','Images/VIP8.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('15','Images/VIP9.1','','');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('14','Images/VIP8.1','Images/VIP8.2','Images/VIP8.3');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('15','Images/VIP9.1','Images/VIP9.2','');
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('16','Images/VIP10.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('17','Images/VIP11.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('18','Images/Musee1.1','','');
-INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('19','Images/Musee2.1','','');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('17','Images/VIP11.1','Images/VIP11.2','');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('18','Images/Musee1.1','Images/Musee1.2','');
+INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('19','Images/Musee2.1','Images/Musee2.2','Images/Musee2.3');
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('20','Images/Musee3.1','','');
 
 
