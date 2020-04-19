@@ -19,7 +19,7 @@
 <br><br>
 <div class="container-fluid text-center">
 <div class="frame">
-<img src="Images/profil.jpg" class ="display" alt="profil" height="200px" width="200px">
+<img src="Images/profil.png" class ="display" alt="profil" height="200px" width="200px">
 </div>
 </div>
 

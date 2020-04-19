@@ -92,7 +92,11 @@
               <input type="Date" placeholder="Date d'expiration" name="DateExpiration" required>
               <br><br>
               <label><b>Code de sécurité</b></label>
-              <input type="password" placeholder="Code de sécurité" name="Code" required>
+              <input type="password" placeholder="Code de sécurité" name="Code" required><br><br>
+
+              <label><img src="Images/PorteMonnaie.png" height="25"><b>Quel montant voulez-vous mettre dans votre porte monnaie ?</b></label>
+              <input type="text" placeholder="ex : 1000" name="PorteMonnaie" required>
+              <br><br>
 
               <div>
                 <input type="checkbox" id="Conditions" required="required">

@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  include("../Back/ConnexionServeur.php");
+  include("Fonction.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -19,20 +26,6 @@
 ?>
 
 <div class="container">    
-  <div class="row">       
-    <div class="col-lg-offset-10 col-lg-1">
-      <form>
-        <br>
-        <div id="barre_recherche">
-          <input id="texte_recherche" type="text" value="Rechercher" />
-          <input id="bouton" type="image" src="Images/recherche.png" height="24" alt="Rechercher" />
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div class="container text-center">    
   <h2>Promotions exceptionnelles</h2><br></div>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -44,7 +37,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="Images/VaseAsie.jpg" alt="Vase1">
+        <img id="imageCarrousel" src="Images/Musee3.1.jpg" alt="Vase1">
         <div class="carousel-caption">
           <h2>Economisez 100 € !</h2>
         </div>      
@@ -69,48 +62,77 @@
     </a>
 </div>
   
-<div class="container text-center">  
-  <br><h2>Articles du jour</h2><br>
+<!------------------ Articles du jour ---------------------->
+<div class="container">  
+  <br><h2>Ces articles pourraient vous intéresser</h2><br>
+    <?php
 
-  <div class="col-xs-6 col-md-4">
-    <div class="thumbnail">
-      <a href="Images/CavalierBronze.jpg" title="Cavalier">
-          <img src="Images/CavalierBronze.jpg" class="thumbnail" alt="Cavalier" height="250" width="140">
-      </a>
-      <div class="caption">
-         <p>Pièce Unique - Grande Cavalière Africaine en Bronze - Burkina Faso - Signe Daouda Derme</p>
-         <p>Catégorie : Ferraille ou Trésor</p>
-         <p>Prix : 210 €</p>
-     </div>
-    </div>
-  </div>
 
-  <div class="col-xs-6 col-md-4">
-    <div class="thumbnail">
-      <a href="Images/VaseAsie.jpg" title="Vase1">
-          <img src="Images/VaseAsie.jpg" class="thumbnail" alt="Vase1" height="230" width="135">
-      </a>
-      <div class="caption">
-         <p>Petit vase en cuivre et émaux cloisonnés, Japon, époque Meiji, fin du XIXe siècle</p>
-         <p>Catégorie : Bon pour le Musée</p>
-         <p>Prix : 195 €</p>
-     </div>
-    </div>
-  </div>
+        $rand1 = random_int(1, 20);
+        $rand2=$rand1;
+        while ($rand2 == $rand1){
+          $rand2 = random_int(1, 20);
+        }
+        $rand3=$rand2;
+        while ($rand3 == $rand2 || $rand3 == $rand1){
+          $rand3 =random_int(1, 20);
+        }
+      
+        $ArticleJour1 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand1'");
+        $data1 = mysqli_fetch_assoc($ArticleJour1);
+        $cheminimg1 = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data1[Nimage]'");
+        $chemin1= mysqli_fetch_assoc($cheminimg1);
 
-  <div class="col-xs-6 col-md-4">
-    <div class="thumbnail">
-      <a href="Images/tableau1.jpg" title="Tableau1">
-          <img src="Images/tableau1.jpg" class="thumbnail" alt="Tableau1" height="550" width="300">
-      </a>
-      <div class="caption">
-         <p>Très belle toile "Le coin du Parc Monceau", 45x55cm, signé Charles Angrand, époque du pointillisme.</p>
-         <p>Catégorie : Bon pour le Musée</p>
-         <p>Prix : 1 820 €</p>
-     </div>
-    </div>
-  </div>
+          echo '<div class="col-xs-6 col-md-4">';
+            echo '<div class="thumbnail">';
+              echo '<img src="'.$chemin1['Chemin1'].'" alt="Article">';
+              echo '<div class="caption">';
+              echo '<h4><b>'.$data1['Nom'].'</b></h4>';
+              echo '<p><b>Catégorie : </b>'.$data1['Categorie'].'</p>';
+              echo '<p><b>Type de vente : </b>'.$data1['Type de vente'].'</p>';
+              echo '<p><b>Prix : </b>'.$data1['Prix'].' €</p><br>';
+              echo '<a href="Item.php?ID='.$data1['ID'].'" id="VoirItem">Voir Item</a><br><br>';
+              echo '</div>';
+            echo '</div>';
+          echo '</div>';
+          
+        $ArticleJour2 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand2'");
+        $data2 = mysqli_fetch_assoc($ArticleJour2);
+        $cheminimg2 = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data2[Nimage]'");
+        $chemin2= mysqli_fetch_assoc($cheminimg2);
 
+          echo '<div class="col-xs-6 col-md-4">';
+            echo '<div class="thumbnail">';
+              echo '<img src="'.$chemin2['Chemin1'].'" alt="Article">';
+              echo '<div class="caption">';
+              echo '<h4><b>'.$data2['Nom'].'</b></h4>';
+              echo '<p><b>Catégorie : </b>'.$data2['Categorie'].'</p>';
+              echo '<p><b>Type de vente : </b>'.$data2['Type de vente'].'</p>';
+              echo '<p><b>Prix : </b>'.$data2['Prix'].' €</p><br>';
+              echo '<a href="Item.php?ID='.$data2['ID'].'" id="VoirItem">Voir Item</a><br><br>';
+              echo '</div>';
+            echo '</div>';
+          echo '</div>';
+
+        $ArticleJour3 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand3'");
+        $data3 = mysqli_fetch_assoc($ArticleJour3);
+        $cheminimg3 = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data3[Nimage]'");
+        $chemin3= mysqli_fetch_assoc($cheminimg3);
+
+          echo '<div class="col-xs-6 col-md-4">';
+            echo '<div class="thumbnail">';
+              echo '<img src="'.$chemin3['Chemin1'].'" alt="Article">';
+              echo '<div class="caption">';
+              echo '<h4><b>'.$data3['Nom'].'</b></h4>';
+              echo '<p><b>Catégorie : </b>'.$data3['Categorie'].'</p>';
+              echo '<p><b>Type de vente : </b>'.$data3['Type de vente'].'</p>';
+              echo '<p><b>Prix : </b>'.$data3['Prix'].' €</p><br>';
+              echo '<a href="Item.php?ID='.$data3['ID'].'" id="VoirItem">Voir Item</a><br><br>';
+              echo '</div>';
+            echo '</div>';
+          echo '</div>';
+        
+?>
 </div><br>
 
 <?php
