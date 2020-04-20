@@ -13,11 +13,11 @@
 </head>
 <body>
 
-    <?php
-        include("nav.php");
-    ?>
+<?php
+  include("nav.php");
+?>
 
-    <h1 style="text-align: center">Liste de vos objets vendus</h1>
+    <!--<h1 style="text-align: center">Liste de vos objets vendus</h1>
     <br>
     <h2>Bon Pour le musée</h2>
     <div class="object-card">
@@ -30,11 +30,58 @@
         </div>
     </div>
 
-    <br><br>
+    <br><br>-->
 
-    <?php
-        include("footer.php");
-    ?>
+
+<?php
+  
+  echo '<h1 style="text-align: center">Liste de vos objets vendus</h1><br>';
+  $result = connection("SELECT * FROM `objetvendu` WHERE `objetvendu`.`categorie` = '$categorie'");
+  $a = 0;//nb de colonne
+  $b=0;
+  while($data = mysqli_fetch_assoc($result))
+  {
+    $cheminimg = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data[Nimage]'");
+    $cheminf= mysqli_fetch_assoc($cheminimg);
+    if($a % 3 == 0)
+    {
+      echo '<div class="row">';
+    }
+    echo '<div class="col-xs-6 col-md-4">';
+    echo '<div class="thumbnail">';
+    echo '<div>';
+    echo '<img id="object-card" src="'.$cheminf['Chemin1'].'" class="thumbnail" alt="Article">';
+    echo '</div>';
+    echo '<div class="caption">';
+    echo '<p>'.$data['Nom'].'</p>';
+    echo '<p>'.$data['Description'].'</p>';
+    echo '<p>Catégorie : '.$data['Categorie'].'</p>';
+    echo '<p>Type de vente : '.$data['Type_de_vente'].'</p>';
+    echo ' <p>Prix : '.$data['Prix'].'€</p><br>';
+    echo ' <br><br></div>';
+    echo ' </div>';
+    echo ' </div>';
+    $b = $a+1;
+    if($a % 3 == 2)
+    {
+      echo '</div>';
+    }
+
+    if($b== mysqli_num_rows($result)){
+      if($a % 3 == 0 || $a % 3 == 1){
+      for($i = 0; $i<3-($a % 3); $i++){
+        echo '</div class="thumbnail">';
+      }
+    }
+  }
+
+    $a+=1;
+}
+?>
+
+<?php
+  include("footer.php");
+?>
 
 </body>
 </html>
