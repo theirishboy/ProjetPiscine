@@ -16,7 +16,7 @@
     <?php
         include("nav.php");
     ?>
-
+    
     <h1 style="text-align: center">Liste de vos objets vendus</h1>
     <br>
     <h2>Bon Pour le musée</h2>

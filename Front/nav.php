@@ -80,29 +80,7 @@
                 
           }
       }  
-        else
-        {
-          
-                  echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories';
-                  echo '<span class="caret"></span></a>';
-                  echo '<ul class="dropdown-menu">';
-                    echo '<li><a href="Ferraille.php">Ferraille ou Trésor</a></li>';
-                    echo '<li><a href="#">Bon pour le musée</a></li>';
-                    echo '<li><a href="#">Accessoires VIP</a></li>';
-            echo '</ul>';
-            echo '</li>';
-                  echo '<li class="dropdown">';
-                  echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Type d achat';
-                  echo '<span class="caret"></span></a>';
-                  echo '<ul class="dropdown-menu">';
-                  echo '<li><a href="#">Enchère</a></li>';
-                  echo '<li><a href="#">Négociation</a></li>';
-                  echo '<li><a href="#">Achat immédiat</a></li>';
-            echo '</ul>';
-            echo '</li>';
-            echo '</ul>';
-        }
-     
+        
       ?>
 
       <?php if(isset($_COOKIE['statut']))

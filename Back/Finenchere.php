@@ -16,7 +16,7 @@ while($data256 = mysqli_fetch_assoc($sql256))
 
 	if($date2256 < $date256 )
 	{
-			$MAJportemonnaire =connection("SELECT `IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel` FROM `enchere` WHERE  `IDclient` NOT LIKE '0' AND IDobjet = '$data256[IDobjet]'");
+			$MAJportemonnaire =connection("SELECT `IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel`,MAX(Prixmax) FROM `enchere` WHERE  `IDclient` NOT LIKE '0' AND IDobjet = '$data256[IDobjet]'");
 			$onmajjj= mysqli_fetch_assoc($MAJportemonnaire);
 			$MAJportemonnairebis =mysqli_fetch_assoc(connection("SELECT * FROM `client` WHERE `Humain`='$onmajjj[IDclient]'"));
 
@@ -24,7 +24,11 @@ while($data256 = mysqli_fetch_assoc($sql256))
 			connection("UPDATE `client` SET `PorteMonnaie` = '$monnaiefinale' WHERE `Humain` = '$onmajjj[IDclient]' ");
 
 
-			connection("INSERT INTO objetvendu (Objet, IDclient, IDvendeur, Prix) SELECT `IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel` FROM `enchere` where `IDobjet` = '$data256[IDobjet]'   ");
+
+
+
+
+			connection("INSERT INTO objetvendu (Objet, IDclient, IDvendeur, Prix) SELECT `IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel` FROM `enchere` where `IDobjet` = '$data256[IDobjet]'");
 			connection("DELETE FROM `enchere` WHERE `IDobjet` = '$data256[IDobjet]'");
 			connection("DELETE FROM `objet art` WHERE `ID` = '$data256[IDobjet]'");
 

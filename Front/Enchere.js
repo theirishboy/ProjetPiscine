@@ -16,9 +16,9 @@ function Combienargent(id){
     window.location.href = "../Back/UpdateVendeur.php?var1=" + chiffre + "&var2="+id;            
 
  }
-   function accepternontheoffre(id,statut){
+   function accepternontheoffre(id,statut,idclient){
 
-    window.location.href = "../Back/Accepterdeclineroffre.php?statut=" + statut + "&id="+id;            
+    window.location.href = "../Back/Accepterdeclineroffre.php?statut=" + statut + "&id="+id+"&idclient="+idclient;            
 
  }
  

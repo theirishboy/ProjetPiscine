@@ -79,7 +79,7 @@ while($data = mysqli_fetch_assoc($sql))
        echo' <h5>Statut :'.$data['statut'].'</h5>';
         if($data['statut']=="Acheteur")
         {
-          echo '<input type="button" id="submit" onclick="accepternontheoffre('.$dataobj['ID'].',1)" value="Accepter offre">';
+          echo '<input type="button" id="submit" onclick="accepternontheoffre('.$dataobj['ID'].',1,'.$data[IDclient].')" value="Accepter offre">';
           echo '<input type="button" id="submit" onclick="Updatetheoffre('.$dataobj['ID'].')" value="Faire une offre">';
           echo '<input type="button" id="submit" onclick="accepternontheoffre('.$dataobj['ID'].',2)" value="Décliner offre">';
         }

@@ -41,7 +41,7 @@ if($Type_Carte==$datapaiement['Type_de_carte'] && $N_Carte==$datapaiement['Numer
 
 
 
-    //header("Location: Acceuil.php");
+    header("Location: Acceuil.php");
 
 
 }
