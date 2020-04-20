@@ -1,7 +1,7 @@
 <?php
 	
 	session_start();
-	include("../Back/ConnexionServeur.php");
+     include("../Back/ConnexionServeur.php"); 
 
 	$info = connection("SELECT * FROM `client` WHERE `Humain` = '$_COOKIE[IDhumain]'");
     $datapaiement = mysqli_fetch_assoc($info);    
@@ -15,7 +15,34 @@
 
 if($Type_Carte==$datapaiement['Type_de_carte'] && $N_Carte==$datapaiement['Numero_de_carte'] && $NomCarte==$datapaiement['Nomcarte'] && $Date==$datapaiement['Dateexpi'] && $Code==$datapaiement['Codesecu'])
 {
-	header("Location: Acceuil.php");
+    $MAJportemonnaire =connection("SELECT `PorteMonnaie` FROM `client` WHERE  `Humain`='$_COOKIE[IDhumain]'");
+    $onmajjj= mysqli_fetch_assoc($MAJportemonnaire);
+    $monnaiefinale=$onmajjj['PorteMonnaie']-$prix;
+    connection("UPDATE `client` SET `PorteMonnaie` = '$monnaiefinale' WHERE `Humain` = '$_COOKIE[IDhumain]' ");
+
+
+
+    $bonjour = connection("SELECT * FROM `panier` WHERE `Humain` = '$_COOKIE[IDhumain]' ");
+
+
+    while ($onsupp=mysqli_fetch_assoc($bonjour)) {
+         $aurevoir =  mysqli_fetch_assoc(connection("SELECT IDclient FROM `objet art` WHERE `ID` = '$onsupp[Objet]' "));
+            connection("DELETE FROM `objet art` WHERE `ID` = '$onsupp[Objet]' ");
+            connection("INSERT INTO `objetvendu`(`Objet`, `IDclient`, `IDvendeur`, `Prix`) VALUES ('$onsupp[Objet]','$_COOKIE[IDhumain]','$aurevoir[IDclient]','$prix') ");
+
+
+    }
+
+    connection("DELETE FROM `panier` WHERE `Humain` = '$_COOKIE[IDhumain]'");
+
+
+
+
+
+
+
+    //header("Location: Acceuil.php");
+
 
 }
 else{

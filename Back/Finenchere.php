@@ -1,23 +1,33 @@
 <?php 
 
-session_start();
-include("ConnexionServeur.php");
 
-$sql = connection("SELECT * FROM `enchere`");
+$date256=date('Y-m-d H:i:s');
 
-$date=date('Y-m-d H:i:s');
-//date_modify($date, '+2 hour');
-echo " ".date('Y-m-d H:i:s')." ";
+$date256 = new DateTime($date256);
 
-$date = new DateTime($date);
-$date->add(new DateInterval('P10D'));
-echo $date->format('Y-m-d') . "\n";
+$date256->add(new DateInterval('PT2H'));
 
+$sql256 = connection("SELECT * FROM `enchere`");
 
-while($data = mysqli_fetch_assoc($sql))
+while($data256 = mysqli_fetch_assoc($sql256))
 {
-	//secho $data['Finenchere'];
+
+	$date2256 = new DateTime($data256['Finenchere']);
+
+	if($date2256 < $date256 )
+	{
+			$MAJportemonnaire =connection("SELECT `IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel` FROM `enchere` WHERE  `IDclient` NOT LIKE '0' AND IDobjet = '$data256[IDobjet]'");
+			$onmajjj= mysqli_fetch_assoc($MAJportemonnaire);
+			$MAJportemonnairebis =mysqli_fetch_assoc(connection("SELECT * FROM `client` WHERE `Humain`='$onmajjj[IDclient]'"));
+
+			$monnaiefinale=$MAJportemonnairebis['PorteMonnaie']-$onmajjj['Prixactuel'];
+			connection("UPDATE `client` SET `PorteMonnaie` = '$monnaiefinale' WHERE `Humain` = '$onmajjj[IDclient]' ");
+
+
+			connection("INSERT INTO objetvendu (Objet, IDclient, IDvendeur, Prix) SELECT `IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel` FROM `enchere` where `IDobjet` = '$data256[IDobjet]'   ");
+			connection("DELETE FROM `enchere` WHERE `IDobjet` = '$data256[IDobjet]'");
+			connection("DELETE FROM `objet art` WHERE `ID` = '$data256[IDobjet]'");
+
+	}
 }
-
-
  ?>

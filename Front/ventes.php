@@ -22,7 +22,6 @@
 
 
 session_start();
-include("../Back/ConnexionServeur.php");
 $sql = connection("SELECT * FROM `enchere` WHERE IDvendeur ='$_COOKIE[IDhumain]'");
  echo' <h1 style="text-align: center">Mes ventes en cours</h1>';
  echo' <h2 style="text-align: center">Enchères</h2>';

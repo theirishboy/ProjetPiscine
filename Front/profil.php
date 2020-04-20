@@ -14,7 +14,6 @@
 <?php 
   include "nav.php";
   session_start();
-include("../Back/ConnexionServeur.php");
 $sql = connection("SELECT * FROM `vendeur` WHERE `Humain`='$_COOKIE[IDhumain]' ");
 $data2=mysqli_fetch_assoc($sql);
 $photo= $data2['Imagesback'];

@@ -1,6 +1,5 @@
 <?php
   session_start();
-  include("../Back/ConnexionServeur.php");
   include("Fonction.php");
     $type=$_GET['ID'];
 

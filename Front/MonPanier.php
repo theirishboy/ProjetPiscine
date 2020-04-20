@@ -1,6 +1,5 @@
 <?php
 session_start();
-include("../Back/ConnexionServeur.php");
 ?>
 
 <!DOCTYPE html>
@@ -96,6 +95,7 @@ include("../Back/ConnexionServeur.php");
               $dataMoneyyy2 = mysqli_fetch_assoc($sql2); 
 
 
+
               echo '<div class="row" id="Item">'; //ligne de l'item
                 echo '<div class="col-sm-12">'; // Colonne 12 des items
                   echo '<div class="col-sm-2">'; //colonne de l'image
@@ -109,6 +109,9 @@ include("../Back/ConnexionServeur.php");
                   echo '</div>';
                   echo '<div class="col-sm-4">';
                   echo '<h5 class="text-right"><b>'.$data2['Type de vente'].'</b></h5>';
+                  echo '</div>';
+                  echo '<div class="col-sm-4">';
+              //s    echo '<h5 class="text-right"><b>'.$dataMoneyyy2['Finenchere'].'</b></h5>';
                   echo '</div>';
                   echo '</div>';
                   echo '<div class="row">';

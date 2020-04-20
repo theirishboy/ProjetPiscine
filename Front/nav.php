@@ -30,7 +30,9 @@
       <li><a href="Acceuil.php"><img src="Images/home.png" height="25"></a></li>
       <li class="dropdown">
     <?php 
+    include("../Back/ConnexionServeur.php");
 
+      include("../Back/Finenchere.php");
     if(isset($_COOKIE['statut']))
       {
           if($_COOKIE['statut']=='client')
