@@ -9,6 +9,18 @@ input {
     padding: 0;
 }
 
+#carrousel{
+    min-height: 390px;
+    max-height: 390px;
+}
+
+#imageCarrousel{
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 380px;
+    max-height: 380px;
+}
+
 .container h2{
     text-align: center;
     font-family: Comic Sans MS; 

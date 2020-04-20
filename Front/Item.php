@@ -101,12 +101,15 @@ else
 }
 
  echo '<div class="row">';
- echo '<div class="col-sm-3"><h4><b>Paiement :</b></h4></div>';
+ echo '<div class="col-sm-3"><h4><b>Paiement </b></h4></div>';
  echo '<div class="row">';
  echo '<div class="col-offset-1 col-sm-1"><img src="Images/visa.png" height="35"></div>';
  echo '<div class="col-sm-offset-1 col-sm-1"><img src="Images/mastercard.png" height="35" width="60"></div>';
  echo '<div class="col-sm-offset-1 col-sm-1"><img src="Images/paypal.png" height="35" width="55"></div>';
  echo '<div class="col-sm-offset-1 col-sm-1"><img src="Images/americanexpress.png" height="35" width="55"></div>';
+ echo '<div class="row">';
+  echo '<div class="col-sm-offset-1 col-sm-1"><img src="Images/ChequeCadeau.png" height="35" width="55"></div>';
+ echo '</div>';
  echo '</div>';
  echo '</div><br>';
   $a = $data['ID'];

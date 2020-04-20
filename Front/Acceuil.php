@@ -31,23 +31,35 @@
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div id="carrousel" class="carousel-inner" role="listbox">
+      <!--objet 1-->
       <div class="item active">
-        <img id="imageCarrousel" src="Images/Musee3.1.jpg" alt="Vase1">
+        <img id="imageCarrousel" src="Images/Musee3.1.jpg" alt="VasePromo">
         <div class="carousel-caption">
           <h2>Economisez 100 € !</h2>
         </div>      
       </div>
 
+      <!--objet 2-->
       <div class="item">
-        <img src="Images/tableau1.jpg" alt="Tableau1">
+        <img id="imageCarrousel" src="Images/Meuble1.jpg"alt="MeublePromo">
         <div class="carousel-caption">
           <h2>-5%</h2>
         </div>      
       </div>
+
+      <!--objet 3-->
+      <div class="item active">
+        <img id="imageCarrousel" src="Images/tableau10.jpg" alt="TableauPromo">
+        <div class="carousel-caption">
+          <h2>Economisez 70 € !</h2>
+        </div>      
+      </div>
+      
     </div>
 
     <!-- Left and right controls -->
