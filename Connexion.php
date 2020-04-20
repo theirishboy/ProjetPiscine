@@ -32,7 +32,6 @@ else
 	{
 		if($data['ID'] == $data2['Humain'])
 		{
-						echo "oui";
 
 			$statut= "vendeur";
 		}

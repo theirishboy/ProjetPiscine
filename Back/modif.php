@@ -2,41 +2,53 @@
 session_start();
 include("ConnexionServeur.php");
 
-$Prénom = isset($_POST["Prénom"])? $_POST["Prénom"] : "";
+$Prénom = isset($_POST["prénom"])? $_POST["prénom"] : "";
 $Nom = isset($_POST["Nom"])? $_POST["Nom"] : "";
 $Pseudo = isset($_POST["Pseudo"])? $_POST["Pseudo"] : "";
 $Mail = isset($_POST["Mail"])? $_POST["Mail"] : "";
 $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
-$Adresse1 = isset($_POST["adresse1"])? $_POST["adresse1"] : "";
-$Adresse2 = isset($_POST["adresse2"])? $_POST["adresse2"] : "";
-$Ville = isset($_POST["ville"])? $_POST["ville"] : "";
-$CodePostal = isset($_POST["codepostal"])? $_POST["codepostal"] : "";
-$Pays = isset($_POST["pays"])? $_POST["pays"] : "";
-$Téléphone = isset($_POST["téléphone"])? $_POST["téléphone"] : "";
+
+$photoP =  isset($_POST["avatar"])? $_POST["avatar"] : "";
+
+$photoB =  isset($_POST["avatar2"])? $_POST["avatar2"] : "";
+$photoP = "Images/".$photoP; 
+$photoB = "Images/".$photoB; 
 
 
-echo $Prénom;
-echo '<br>'
-echo $Nom;
-echo '<br>'
-echo $Pseudo;
-echo '<br>'
-echo $Mail;
-echo '<br>'
-echo $mdp;
-echo '<br>'
-echo $Adresse1;
-echo '<br>'
-echo $Adresse2;
-echo '<br>'
-echo $Ville;
-echo '<br>'
-echo $CodePostal;
-echo '<br>'
-echo $Pays;
-echo '<br>'
-echo $Téléphone;
-echo '<br>'
+if($Prénom != '')
+{
+	$sql = connection("UPDATE `humain` SET `Prenom`='$Prénom'  WHERE `ID`='$_COOKIE[IDhumain]'");
+}
+if($Nom != '')
+{
+	$sql = connection("UPDATE `humain` SET `Nom`='$Nom'  WHERE `ID`='$_COOKIE[IDhumain]'");
+}
 
+
+if($Pseudo != '')
+{
+	$sql = connection("UPDATE `humain` SET `Login`='$Pseudo'  WHERE `ID`='$_COOKIE[IDhumain]'");
+}
+
+
+
+if($Mail != '')
+{
+	$sql = connection("UPDATE `humain` SET `Mail`='$Mail'  WHERE `ID`='$_COOKIE[IDhumain]'");
+}
+if($mdp != '')
+{
+	$sql = connection("UPDATE `humain` SET `Mot_de_passe`='$mdp'  WHERE `ID`='$_COOKIE[IDhumain]'");
+}
+
+if($photoP != '')
+{
+	$sql = connection("UPDATE `vendeur` SET `Imagesprofile`='$photoP'  WHERE `humain`='$_COOKIE[IDhumain]'");
+}
+if($photoB != '')
+{
+	$sql = connection("UPDATE `vendeur` SET `Imagesback`='$photoB'  WHERE `humain`='$_COOKIE[IDhumain]'");
+}
+header("Location: ../Front/modif.php")
 
 ?>

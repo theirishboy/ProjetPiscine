@@ -14,7 +14,6 @@ $Prix =  isset($_POST["Prix"])? $_POST["Prix"] : "";
 $date =  isset($_POST["date"])? $_POST["date"] : "";
 $time =  isset($_POST["time"])? $_POST["time"] : "";
 $Bonjour = isset($_GET["Bonjour"])? $_GET["Bonjour"] : "";
-echo $Bonjour;
 $datetime=$date." ".$time;
 
 $photoR = "Images/"."$photo";
