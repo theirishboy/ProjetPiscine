@@ -26,7 +26,7 @@ else
 	if($_POST['Type'] == "Vendeur")
 	{
 
-		$req ="INSERT INTO `vendeur` (`Humain`) VALUES ('$data[ID]');";
+		$req ="INSERT INTO `vendeur`(`Humain`, `Imagesback`, `Imagesprofile`) VALUES ($data[ID],'','');";
 		$result = connection($req); 
 	}
 	if($_POST['Type'] == "Client")

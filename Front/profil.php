@@ -11,15 +11,22 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<?php 
+  include "nav.php";
+  session_start();
+include("../Back/ConnexionServeur.php");
+$sql = connection("SELECT * FROM `vendeur` WHERE `Humain`='$_COOKIE[IDhumain]' ");
+$data2=mysqli_fetch_assoc($sql);
+$photo= $data2['Imagesback'];
 
-<?php
-    include("nav.php");
-?>
+ ?>
+<body style=" background-image: url(<?php echo $photo;?>  ">
+
+
 <br><br>
 <div class="container-fluid text-center">
 <div class="frame">
-<img src="Images/profil.png" class ="display" alt="profil" height="200px" width="200px">
+<img src=" <?php echo $data2['Imagesback'] ?>" class ="display" alt="profil" height="200px" width="200px">
 </div>
 </div>
 
@@ -44,7 +51,6 @@
  </div>     
 
 <br><br><br><br>
-
 <?php
     include("footer.php");
 ?>
