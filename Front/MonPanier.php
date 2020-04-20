@@ -206,7 +206,8 @@ session_start();
             $portemonnaie = connection("SELECT `PorteMonnaie` FROM `client` WHERE `Humain` = '$_COOKIE[IDhumain]'");
             $dataPortemonnaie = mysqli_fetch_assoc($portemonnaie);
 
-            $tot = $totAchat + $totNégo + $totEnch;
+            $tot2 = $totAchat + $totNégo + $totEnch;
+            $tot =  $totAchat;
 
             echo '<div class="col-sm-5" id="fenetreCommande">';             // Colonne de la commande
             echo '<div class="row">';
@@ -269,10 +270,10 @@ session_start();
             echo '</div>';
             echo '<div class="row">';
             echo '<div class="col-sm-12" style="text-align: center;">';
-            if($tot > $dataPortemonnaie['PorteMonnaie']){
+            if($tot2 > $dataPortemonnaie['PorteMonnaie']){
               echo '<button id="Finaliser" onclick="PaiementImpossible()"><b>Passer au paiement</b></button>';
             }
-            elseif($tot <= $dataPortemonnaie['PorteMonnaie']) {
+            elseif($tot2 <= $dataPortemonnaie['PorteMonnaie']) {
               echo '<a href="Paiement.php?tot='.$tot.'"><button id="Finaliser"><b>Passer au paiement</b></button></a>';
             }
             echo '</div>';

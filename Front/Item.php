@@ -87,7 +87,18 @@ session_start();
  echo '<h4><b>Description : </b>'.$data['Description'].'</h4><br>';
  echo '<h4><b>Catégorie : </b>'.$data['Categorie'].'</h4>'; 
  echo '<h4><b>Type d achat : </b>'.$data['Type de vente'].'</h4>';
- echo '<h4><b>Prix : </b>'.$data['Prix'].'€</h4><br>';
+ if($data['Type de vente'] == "Enchere")
+{
+  $result24 = connection("SELECT * FROM `enchere` WHERE `enchere`.`IDobjet` = '$id'");
+  $data24= mysqli_fetch_assoc($result);
+   echo '<h4><b>Prix : </b>'.$data24['Prixactuel'].'€</h4><br>';
+
+}
+else
+{
+     echo '<h4><b>Prix : </b>'.$data['Prix'].'€</h4><br>';
+
+}
 
  echo '<div class="row">';
  echo '<div class="col-sm-3"><h4><b>Paiement :</b></h4></div>';
