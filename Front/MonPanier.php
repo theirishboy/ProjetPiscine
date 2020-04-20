@@ -206,12 +206,8 @@ session_start();
             $portemonnaie = connection("SELECT `PorteMonnaie` FROM `client` WHERE `Humain` = '$_COOKIE[IDhumain]'");
             $dataPortemonnaie = mysqli_fetch_assoc($portemonnaie);
 
-<<<<<<< HEAD
             $tot2 = $totAchat + $totNégo + $totEnch;
             $tot =  $totAchat;
-=======
-            $tot = $totAchat;
->>>>>>> Marine2
 
             echo '<div class="col-sm-5" id="fenetreCommande">';             // Colonne de la commande
             echo '<div class="row">';

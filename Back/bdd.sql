@@ -11,7 +11,7 @@ CREATE TABLE `ebayece`.`objet art` ( `ID` INT(10) NOT NULL AUTO_INCREMENT, `Nom`
 CREATE TABLE `ebayece`.`client` ( `Humain` INT(10) NOT NULL , `N_Telephone` VARCHAR(10) NOT NULL ,`Pays` VARCHAR(50) NOT NULL , `Ville` VARCHAR(50) NOT NULL , `Code_Postal` VARCHAR(50) NOT NULL , `AdresseL1` VARCHAR(50) NOT NULL , `AdresseL2` VARCHAR(50) NOT NULL , `Type_de_carte` VARCHAR(50) NOT NULL , `Numero_de_carte` VARCHAR(20) NOT NULL,`Nomcarte` VARCHAR(50) NOT NULL,`Dateexpi` DATE NOT NULL,`Codesecu` VARCHAR(5) NOT NULL,`PorteMonnaie` INT(30) NOT NULL , INDEX (`Humain`)) ENGINE = MyISAM; 
 
 CREATE TABLE `ebayece`.`panier` ( `Humain` INT(10) NOT NULL , `Objet` INT(10) NOT NULL , `Prix` VARCHAR(10) NOT NULL , INDEX `Humain` (`Humain`), INDEX `Objet art` (`Objet`)) ENGINE = MyISAM; 
-CREATE TABLE `ebayece`.`objetvendu` ( `Objet` INT(10) NOT NULL , `IDclient` VARCHAR(10) NOT NULL ,`IDvendeur` INT(10) NOT NULL , `Prix` VARCHAR(10) NOT NULL , INDEX `Objet art` (`Objet`)) ENGINE = MyISAM; 
+CREATE TABLE `ebayece`.`objetvendu` ( `Objet` INT(10) NOT NULL , `IDclient` VARCHAR(10) NOT NULL ,`IDvendeur` INT(10) NOT NULL , `Prix` VARCHAR(10) NOT NULL , `Nimage` VARCHAR(10) NOT NULL, INDEX `Objet art` (`Objet`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`images` ( `ID` INT NOT NULL AUTO_INCREMENT , `Chemin1`VARCHAR(250) NOT NULL ,`Chemin2`VARCHAR(250) NOT NULL,`Chemin3`VARCHAR(250) NOT NULL,PRIMARY KEY (`ID`)) ENGINE = MyISAM; 
 CREATE TABLE `ebayece`.`enchere` (  `IDobjet`  INT (10) NOT NULL , `IDclient` INT(10) NOT NULL ,`IDvendeur` INT(10) NOT NULL,`Prixactuel` INT(10) NOT NULL,`Prixmax` INT(10) NOT NULL,`Monoffre` INT(10) NOT NULL,`Finenchere` DATETIME NOT NULL); 
 CREATE TABLE `ebayece`.`offre` (  `IDobjet`  INT (10) NOT NULL , `IDclient` VARCHAR(10) NOT NULL ,`IDvendeur` INT(10) NOT NULL,`Prixnouveau` VARCHAR(10) NOT NULL,`NombreProposition` INT(10) NOT NULL,`statut` VARCHAR(20) NOT NULL); 
@@ -77,12 +77,12 @@ INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('
 INSERT INTO `ebayece`.`images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES ('20','Images/Musee3.1','','');
 
 
-INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('5','','3','','0','Vendeur');
-INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('9','','3','','0','Vendeur');
-INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('10','','3','','0','Vendeur');
-INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('15','','3','','0','Vendeur');
-INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('17','','3','','0','Vendeur');
-INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('19','','3','','0','Vendeur');
+INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('5','','3','0','0','Vendeur');
+INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('9','','3','0','0','Vendeur');
+INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('10','','3','0','0','Vendeur');
+INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('15','','3','0','0','Vendeur');
+INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('17','','3','0','0','Vendeur');
+INSERT INTO `ebayece`.`offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`,`NombreProposition`,`statut`) VALUES ('19','','3','0','0','Vendeur');
 
 INSERT INTO `enchere` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel`, `Prixmax`, `Monoffre`, `Finenchere`) VALUES ('1', '0', '5', '450', '450', '450', '2020-04-21 00:00:00');
 INSERT INTO `enchere` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixactuel`, `Prixmax`, `Monoffre`, `Finenchere`) VALUES ('2', '0', '5', '1500', '1500', '1500', '2020-04-17 00:00:00');

@@ -9,8 +9,21 @@ $ID = $_GET['var2'];
  
 $nouvelleoffre = connection("SELECT * FROM `offre`WHERE `IDobjet` = '$ID' AND `Prixnouveau` = 0"); 
 $data = mysqli_fetch_assoc($nouvelleoffre); 
- 
-$creanouvelleoffre = connection("INSERT INTO `offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`, `NombreProposition`, `statut`) VALUES ('$data[IDobjet]', '$_COOKIE[IDhumain]', '$data[IDvendeur]', '$offre ', '1', 'Acheteur')"); 
-header("Location: ../Front/MonPanier.php");  
+
+if($offre != '')
+{
+	$creanouvelleoffre = connection("INSERT INTO `offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`, `NombreProposition`, `statut`) VALUES ('$data[IDobjet]', '$_COOKIE[IDhumain]', '$data[IDvendeur]', '$offre ', '1', 'Acheteur')"); 
+	echo "INSERT INTO `offre` (`IDobjet`, `IDclient`, `IDvendeur`, `Prixnouveau`, `NombreProposition`, `statut`) VALUES ('$data[IDobjet]', '$_COOKIE[IDhumain]', '$data[IDvendeur]', '$offre ', '1', 'Acheteur')";
+
+	header("Location: ../Front/MonPanier.php");  
+
+}
+else
+{
+header("Location: ../Front/item.php?ID=$ID");  
+
+}
+
+
  ?>
  

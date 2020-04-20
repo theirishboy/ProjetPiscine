@@ -90,7 +90,15 @@
         }
       
         $ArticleJour1 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand1'");
-        $data1 = mysqli_fetch_assoc($ArticleJour1);
+
+        while(mysqli_num_rows($ArticleJour1) == 0)
+        {
+                $rand1 = random_int(1, 20);
+                $ArticleJour1 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand1'");
+
+
+        }
+          $data1 = mysqli_fetch_assoc($ArticleJour1);
         $cheminimg1 = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data1[Nimage]'");
         $chemin1= mysqli_fetch_assoc($cheminimg1);
 
@@ -102,12 +110,27 @@
               echo '<p><b>Catégorie : </b>'.$data1['Categorie'].'</p>';
               echo '<p><b>Type de vente : </b>'.$data1['Type de vente'].'</p>';
               echo '<p><b>Prix : </b>'.$data1['Prix'].' €</p><br>';
+              if(isset($_COOKIE['statut']))
+              {
               echo '<a href="Item.php?ID='.$data1['ID'].'" id="VoirItem">Voir Item</a><br><br>';
+            }
               echo '</div>';
             echo '</div>';
           echo '</div>';
+        
+      
           
         $ArticleJour2 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand2'");
+          while(mysqli_num_rows($ArticleJour2) == 0)
+        {
+           $rand2=$rand1;
+        while ($rand2 == $rand1){
+          $rand2 = random_int(1, 20);
+        }
+                $ArticleJour2 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand2'");
+
+
+        }
         $data2 = mysqli_fetch_assoc($ArticleJour2);
         $cheminimg2 = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data2[Nimage]'");
         $chemin2= mysqli_fetch_assoc($cheminimg2);
@@ -120,12 +143,28 @@
               echo '<p><b>Catégorie : </b>'.$data2['Categorie'].'</p>';
               echo '<p><b>Type de vente : </b>'.$data2['Type de vente'].'</p>';
               echo '<p><b>Prix : </b>'.$data2['Prix'].' €</p><br>';
-              echo '<a href="Item.php?ID='.$data2['ID'].'" id="VoirItem">Voir Item</a><br><br>';
+              if(isset($_COOKIE['statut']))
+              {
+                      echo '<a href="Item.php?ID='.$data2['ID'].'" id="VoirItem">Voir Item</a><br><br>';
+
+              }
               echo '</div>';
             echo '</div>';
           echo '</div>';
+     
 
         $ArticleJour3 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand3'");
+        while(mysqli_num_rows($ArticleJour3) == 0)
+        {
+            $rand3=$rand2;
+        while ($rand3 == $rand2 || $rand3 == $rand1){
+          $rand3 =random_int(1, 20);
+        }
+                $ArticleJour3 = connection("SELECT * FROM `objet art` WHERE `objet art`.`ID` = '$rand3'");
+
+
+
+        }
         $data3 = mysqli_fetch_assoc($ArticleJour3);
         $cheminimg3 = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data3[Nimage]'");
         $chemin3= mysqli_fetch_assoc($cheminimg3);
@@ -138,7 +177,10 @@
               echo '<p><b>Catégorie : </b>'.$data3['Categorie'].'</p>';
               echo '<p><b>Type de vente : </b>'.$data3['Type de vente'].'</p>';
               echo '<p><b>Prix : </b>'.$data3['Prix'].' €</p><br>';
+              if(isset($_COOKIE['statut']))
+              {
               echo '<a href="Item.php?ID='.$data3['ID'].'" id="VoirItem">Voir Item</a><br><br>';
+            }
               echo '</div>';
             echo '</div>';
           echo '</div>';

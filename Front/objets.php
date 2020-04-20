@@ -35,8 +35,19 @@
 
 <?php
   
-  echo '<h1 style="text-align: center">Liste de vos objets vendus</h1><br>';
-  $result = connection("SELECT * FROM `objetvendu` WHERE `objetvendu`.`categorie` = '$categorie'");
+  if($_COOKIE['statut'] == "vendeur")
+  {
+      echo '<h1 style="text-align: center">Liste de vos objets vendus</h1><br>';
+
+      $result = connection("SELECT * FROM `objetvendu` WHERE `objetvendu`.`IDvendeur` = '$_COOKIE[IDhumain]'");
+   }
+  else
+  {
+          echo '<h1 style="text-align: center">Liste de vos objets achetés</h1><br>';
+
+      $result = connection("SELECT * FROM `objetvendu` WHERE `objetvendu`.`IDclient` = '$_COOKIE[IDhumain]'");
+
+  }
   $a = 0;//nb de colonne
   $b=0;
   while($data = mysqli_fetch_assoc($result))
@@ -50,13 +61,17 @@
     echo '<div class="col-xs-6 col-md-4">';
     echo '<div class="thumbnail">';
     echo '<div>';
-    echo '<img id="object-card" src="'.$cheminf['Chemin1'].'" class="thumbnail" alt="Article">';
+    echo '<img id="object-card" src="'.$cheminf['Chemin1'].' " 
+
+  width="350"
+ height="350"
+
+
+class="thumbnail" alt="Article">';
     echo '</div>';
     echo '<div class="caption">';
-    echo '<p>'.$data['Nom'].'</p>';
-    echo '<p>'.$data['Description'].'</p>';
-    echo '<p>Catégorie : '.$data['Categorie'].'</p>';
-    echo '<p>Type de vente : '.$data['Type_de_vente'].'</p>';
+    
+
     echo ' <p>Prix : '.$data['Prix'].'€</p><br>';
     echo ' <br><br></div>';
     echo ' </div>';

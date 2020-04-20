@@ -43,7 +43,7 @@ while($data = mysqli_fetch_assoc($sql))
        echo' <h4>'.$dataobj['Description'].'</h4>';
        echo' <h5>Catégorie : '.$dataobj['Categorie'].'</h5>';
        echo' <h5>Prix Initial :'.$dataobj['Prix'].'€</h5>';
-       echo' <h5>Plus haut prix proposé :'.$data['Prixactuel'].'</h5>';
+       echo' <h5>Plus haut prix proposé :'.$data['Prixactuel'].'€</h5>';
        echo'<h5>Fin de l enchère :'.$data['Finenchere'].'</h5>';
      echo'</div>';
     echo'</div>';
@@ -70,7 +70,7 @@ while($data = mysqli_fetch_assoc($sql))
 
 
    echo' <div class="object-card">';
-     echo'<img src="'.$cheminf['Chemin1'].'"" alt="tableau" height="90%" width="40%">';
+     echo'<img src="'.$cheminf['Chemin1'].'"" alt="tableau" height="250" width="250">';
       echo'<div class="description-card">';
       echo'  <h3>'.$dataobj['Nom'].'</h3>';
        echo' <h4>'.$dataobj['Description'].'</h4>';
@@ -79,7 +79,7 @@ while($data = mysqli_fetch_assoc($sql))
        echo' <h5>Statut :'.$data['statut'].'</h5>';
         if($data['statut']=="Acheteur")
         {
-          echo '<input type="button" id="submit" onclick="accepternontheoffre('.$dataobj['ID'].',1,'.$data[IDclient].')" value="Accepter offre">';
+          echo '<input type="button" id="submit" onclick="accepternontheoffre('.$dataobj['ID'].',1,'.$data['IDclient'].')" value="Accepter offre">';
           echo '<input type="button" id="submit" onclick="Updatetheoffre('.$dataobj['ID'].')" value="Faire une offre">';
           echo '<input type="button" id="submit" onclick="accepternontheoffre('.$dataobj['ID'].',2)" value="Décliner offre">';
         }

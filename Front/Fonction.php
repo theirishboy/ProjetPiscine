@@ -21,7 +21,19 @@ function listobjet($categorie)
 		echo '<p>'.$data['Nom'].'</p>';
 		echo '<p>'.$data['Description'].'</p>';
 		echo '<p>Catégorie : '.$data['Categorie'].'</p>';
-		echo ' <p>Prix : '.$data['Prix'].'€</p><br>';
+		if($data['Type de vente'] == "Enchere")
+		{
+			$result24 = connection("SELECT * FROM `enchere` WHERE `enchere`.`IDobjet` = '$data[ID]'");
+			$data24= mysqli_fetch_assoc($result24);
+
+			echo '<h4><b>Prix : </b>'.$data24['Prixactuel'].'€</h4><br>';
+
+		}
+		else
+		{
+			echo '<h4><b>Prix : </b>'.$data['Prix'].'€</h4><br>';
+
+		}
 		echo '<a href="Item.php?ID='.$data['ID'].'" id="VoirItem">Voir Item</a>';
 		echo ' <br><br></div>';
 		echo ' </div>';
@@ -34,10 +46,10 @@ function listobjet($categorie)
 
 		if($b== mysqli_num_rows($result)){
 			if($a % 3 == 0 || $a % 3 == 1){
-			for($i = 0; $i<3-($a % 3); $i++){
-				echo '</div class="thumbnail">';
+				for($i = 0; $i<3-($a % 3); $i++){
+					echo '</div class="thumbnail">';
+				}
 			}
-		}
 		}
 
 		$a+=1;
@@ -86,7 +98,19 @@ function listobjetpartype($Typedevente)
 		echo '<p>'.$data['Nom'].'</p>';
 		echo '<p>'.$data['Description'].'</p>';
 		echo '<p>Catégorie : '.$data['Categorie'].'</p>';
-		echo ' <p>Prix : '.$data['Prix'].'€</p><br>';
+		if($data['Type de vente'] == "Enchere")
+		{
+			$result24 = connection("SELECT * FROM `enchere` WHERE `enchere`.`IDobjet` = '$data[ID]'");
+			$data24= mysqli_fetch_assoc($result24);
+
+			echo '<h4><b>Prix : </b>'.$data24['Prixactuel'].'€</h4><br>';
+
+		}
+		else
+		{
+			echo '<h4><b>Prix : </b>'.$data['Prix'].'€</h4><br>';
+
+		}		
 		echo '<a href="Item.php?ID='.$data['ID'].'" id="VoirItem">Voir Item</a>';
 		echo ' <br><br></div>';
 		echo ' </div>';
@@ -99,10 +123,10 @@ function listobjetpartype($Typedevente)
 
 		if($b== mysqli_num_rows($result)){
 			if($a % 3 == 0 || $a % 3 == 1){
-			for($i = 0; $i<3-($a % 3); $i++){
-				echo '</div class="thumbnail">';
+				for($i = 0; $i<3-($a % 3); $i++){
+					echo '</div class="thumbnail">';
+				}
 			}
-		}
 		}
 
 		$a+=1;

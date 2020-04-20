@@ -18,7 +18,7 @@ function Combienargent(id){
  }
    function accepternontheoffre(id,statut,idclient){
 
-    window.location.href = "../Back/Accepterdeclineroffre.php?statut=" + statut + "&id="+id+"&idclient="+idclient;            
+    window.location.href = "../Back/Accepterdeclineroffre.php?statut=" + statut + "&id="+id+"&client="+idclient;            
 
  }
  

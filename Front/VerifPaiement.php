@@ -27,14 +27,26 @@ if($Type_Carte==$datapaiement['Type_de_carte'] && $N_Carte==$datapaiement['Numer
 
     while ($onsupp=mysqli_fetch_assoc($bonjour)) {
          $aurevoir =  mysqli_fetch_assoc(connection("SELECT IDclient FROM `objet art` WHERE `ID` = '$onsupp[Objet]' "));
-            connection("DELETE FROM `objet art` WHERE `ID` = '$onsupp[Objet]' ");
-            connection("INSERT INTO `objetvendu`(`Objet`, `IDclient`, `IDvendeur`, `Prix`) VALUES ('$onsupp[Objet]','$_COOKIE[IDhumain]','$aurevoir[IDclient]','$prix') ");
+            connection("INSERT INTO `objetvendu`(`Objet`, `IDclient`, `IDvendeur`, `Prix`, `Nimage`) VALUES ('$onsupp[Objet]','$_COOKIE[IDhumain]','$aurevoir[IDclient]','$prix','0') ");
+
+                echo "$onsupp[Objet]";
+                echo "$aurevoir[IDclient]";
+                echo "ici";
+
+            $test=connection("UPDATE objetvendu set Nimage=(SELECT Nimage FROM `objet art` where ID ='$onsupp[Objet]' ) WHERE IDvendeur='$aurevoir[IDclient]' AND Objet='$onsupp[Objet]'"); 
+
+
+
+
+          connection("DELETE FROM `objet art` WHERE `ID` = '$onsupp[Objet]' ");
+
+
+
 
 
     }
 
     connection("DELETE FROM `panier` WHERE `Humain` = '$_COOKIE[IDhumain]'");
-
 
 
 

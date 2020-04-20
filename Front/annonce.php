@@ -29,7 +29,7 @@ $Bonjour = isset($_GET["Bonjour"])? $_GET["Bonjour"] : "";
 
             <h5>Nom de l'article</h5>
 
-            <input type="text" name="article" >
+            <input type="text" name="article" required>
 
 
 
@@ -45,7 +45,7 @@ $Bonjour = isset($_GET["Bonjour"])? $_GET["Bonjour"] : "";
                   <br><br>
 
                   <h5>Descrpition</h5>
-                  <textarea id="description" name="description" rows="6" cols="33">
+                  <textarea id="description" name="description" rows="6" cols="33" required>
                   </textarea>
 
 
@@ -67,7 +67,7 @@ $Bonjour = isset($_GET["Bonjour"])? $_GET["Bonjour"] : "";
                     <label for="avatar">Importer une photo</label>
                     <p align="right"><input type="file"
                      id="avatar" name="avatar"
-                     accept="image/png, image/jpeg"></p>
+                     accept="image/png, image/jpeg" required></p>
                       <br>
       
                      <h5>Si enchère indiquer la date de fin</h5>
@@ -83,7 +83,7 @@ $Bonjour = isset($_GET["Bonjour"])? $_GET["Bonjour"] : "";
                      <br>
       
                      <h5>Prix</h5>
-                     <p><input type="text" name="Prix"></p>
+                     <p><input type="text" name="Prix" required></p>
 
                    </div>
                  </div>

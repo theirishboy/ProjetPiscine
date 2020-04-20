@@ -90,7 +90,8 @@ session_start();
  if($data['Type de vente'] == "Enchere")
 {
   $result24 = connection("SELECT * FROM `enchere` WHERE `enchere`.`IDobjet` = '$id'");
-  $data24= mysqli_fetch_assoc($result);
+  $data24= mysqli_fetch_assoc($result24);
+
    echo '<h4><b>Prix : </b>'.$data24['Prixactuel'].'€</h4><br>';
 
 }
@@ -115,7 +116,7 @@ else
   $a = $data['ID'];
   
   {
-    if($data['Type de vente'] != "Enchere")
+    if($data['Type de vente'] == "Negociation")
     {
       $verificationpaspannier=connection("SELECT `Humain` FROM `panier`WHERE `panier`.`Objet`='$data[ID]'");
       $verificationpasoffre=connection("SELECT `IDclient` FROM `offre`WHERE `offre`.`IDobjet`='$data[ID]' AND `offre`.`IDclient` = '$_COOKIE[IDhumain]'");
@@ -128,7 +129,7 @@ else
 
 
     }
-    else
+    elseif($data['Type de vente'] == "Enchere")
     {
       $verificationpasenchère=connection("SELECT `IDclient` FROM `enchere`WHERE `enchere`.`IDobjet`='$data[ID]' AND `enchere`.`IDclient` = '$_COOKIE[IDhumain]'");
       if(mysqli_num_rows($verificationpasenchère)==0 )
@@ -136,6 +137,11 @@ else
               echo '<input type="button" id="Offre" onclick="Envoietonbiff('.$a.')" value="Faire une enchère"><br><br>';
 
       }
+
+    }
+    elseif($data['Type de vente'] == "Achat immediat")
+    {
+           echo '<a href="../back/Addobjetpanier.php?ID='.$data['ID'].'" target="_blank"> <input type="submit" id="Item" value="Ajouter au panier"></a><br>';
 
     }
   }

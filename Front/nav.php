@@ -91,6 +91,8 @@
             $dataPortemonnaie = mysqli_fetch_assoc($portemonnaie);
 
             echo '<ul class="nav navbar-nav navbar-right">';
+             echo '<li><a href="objets.php" id="title"><img src="Images/Liste.png" height="28">  Mes items achetés</a></li>';
+
             echo '<li><a href="#" id="title"><img src="Images/PorteMonnaie.png" height="30">'.$dataPortemonnaie['PorteMonnaie'].' €</a></li>';
             echo '<li><a href="MonPanier.php"><img src="Images/panier.png" height="25"></a></li>';
             echo  ' <li><a href="../Deconnexion.php"><span class="glyphicon glyphicon-log-in"></span> Deconnexion </a></li>';

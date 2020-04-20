@@ -54,7 +54,7 @@
 
       $humain = connection("SELECT * FROM `humain` WHERE `humain`.`ID`= '$vendeur[Humain]' ");
       $data = mysqli_fetch_assoc($humain);
-      $cheminimage = connection("SELECT `Chemin1` FROM `images` WHERE `images`.`ID` = '$data[Nimage]'");
+      $cheminimage = connection("SELECT `Imagesprofile` FROM `vendeur` WHERE `vendeur`.`Humain` = '$vendeur[Humain]'");
       $chemin= mysqli_fetch_assoc($cheminimage);
 
           echo '<tr>';
