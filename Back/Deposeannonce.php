@@ -2,9 +2,9 @@
 
 
 <?php  
- 
+ include("ConnexionServeur.php"); 
+
 session_start(); 
-include("ConnexionServeur.php"); 
 $Nom =  isset($_POST["article"])? $_POST["article"] : "";
 $Categorie =  isset($_POST["catégorie"])? $_POST["catégorie"] : "";
 $Description =  isset($_POST["description"])? $_POST["description"] : "";
@@ -15,15 +15,21 @@ $date =  isset($_POST["date"])? $_POST["date"] : "";
 $time =  isset($_POST["time"])? $_POST["time"] : "";
 $Bonjour = isset($_GET["Bonjour"])? $_GET["Bonjour"] : "";
 $datetime=$date." ".$time;
+$photoR = '';
 
-$photoR = "Images/"."$photo";
+	$photoR = "Images/"."$photo";
+
+
 $sql=connection("INSERT INTO `images` (`ID`, `Chemin1`, `Chemin2`, `Chemin3`) VALUES (NULL, '$photoR', '', '')");
 $sql=connection("SELECT `ID` FROM `images` WHERE `images`.`Chemin1` ='$photoR'");
+
+$test="SELECT `ID` FROM `images` WHERE `images`.`Chemin1` ='$photoR'";
+echo $test;
 $data2=mysqli_fetch_assoc($sql);
 
 
 
-$sql=connection("INSERT INTO `objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`, `Nimage`) VALUES (NULL, '$Nom', '$Description', '$Categorie', '$Choixvente', '$Prix', '$data2[ID]')");
+$sql=connection("INSERT INTO `objet art` (`ID`, `Nom`, `Description`, `Categorie`, `Type de vente`, `Prix`, `Nimage`,`IDclient`) VALUES (NULL, '$Nom', '$Description', '$Categorie', '$Choixvente', '$Prix', '$data2[ID]','$_COOKIE[IDhumain]')");
 
 $sql=connection("SELECT * FROM `objet art` WHERE `objet art`.`Nom` = '$Nom' AND `objet art`.`Categorie` = '$Categorie'");
 $data=mysqli_fetch_assoc($sql);
@@ -42,6 +48,6 @@ if($Bonjour == 1)
 {
 	header("location: ../Front/Adminitem.php");
 }
-//header("location: ../Front/Acceuil.php");
+header("location: ../Front/Acceuil.php");
 
 ?>

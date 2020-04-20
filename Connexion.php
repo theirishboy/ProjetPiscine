@@ -9,63 +9,96 @@ $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
 $statut="";
     // mauvais couple id/mdp}
 
-$testmotdepasse = "SELECT ID FROM `humain` WHERE `humain`.`Mot_de_passe`=PASSWORD('$mdp') 
-AND `humain`.`login`= '$login'";
+$coAdmin = connection("SELECT ID FROM `humain` WHERE `humain`.`Mot_de_passe`=PASSWORD('$mdp') 
+	AND `humain`.`login`= '$login'");
+
+$coclient = connection("SELECT ID FROM `humain` WHERE `humain`.`Mot_de_passe`=PASSWORD('$mdp') 
+	AND `humain`.`Mail`= '$login'");
+
+$covendeur = connection("SELECT ID FROM `humain` WHERE `humain`.`login`='$mdp' 
+	AND `humain`.`Mail`= '$login'");
 
 //$Tmdp=connection($testmotdepasse);
-$Tmdp=connection($testmotdepasse);
-$data = mysqli_fetch_assoc($Tmdp);
 
-$IDhumain = $data['ID'];
-if (mysqli_num_rows($Tmdp)==0)
+$dataA = mysqli_fetch_assoc($coAdmin);
+$dataC = mysqli_fetch_assoc($coclient);
+$dataV = mysqli_fetch_assoc($covendeur);
+
+$IDhumainA = $dataA['ID'];
+$IDhumainC = $dataC['ID'];
+$IDhumainV = $dataV['ID'];
+
+if (mysqli_num_rows($coAdmin)==0 && mysqli_num_rows($coclient)==0 && mysqli_num_rows($covendeur)==0 )
 {
 	echo "mauvais mdp";
 	header("Location: Front/Connexion.php");
 }
-
 else
 {
-	
 	$req = "SELECT * FROM `vendeur`";
 	$result = connection($req); 
-	while($data2 = mysqli_fetch_assoc($result))
+	if(mysqli_num_rows($covendeur) !=0 )
 	{
-		if($data['ID'] == $data2['Humain'])
+		
+		while($data2 = mysqli_fetch_assoc($result) )
 		{
 
-			$statut= "vendeur";
+			if($IDhumainV == $data2['Humain'])
+			{
+
+				$statut= "vendeur";
+				setcookie('IDhumain',$IDhumainV);
+
+			}
 		}
 	}
 	$req = "SELECT * FROM `client`";
 	$result = connection($req); 
-	while($data2 = mysqli_fetch_assoc($result))
+	if(mysqli_num_rows($coclient) !=0 )
 	{
-		echo $data2['Humain'];
-		if($data['ID'] == $data2['Humain'])
+		
+		while($data2 = mysqli_fetch_assoc($result))
 		{
-			echo "oui";
+			if($IDhumainC  == $data2['Humain'])
+			{
 
-			$statut= "client";
+				$statut= "client";
+			setcookie('IDhumain',$IDhumainC);
+
+			}
 		}
 	}
 	$req = "SELECT * FROM `admin`";
 	$result = connection($req); 
-	while($data2 = mysqli_fetch_assoc($result))
+	if(mysqli_num_rows($coAdmin) !=0 )
 	{
-		if($data['ID'] == $data2['Humain'])
+		while($data2 = mysqli_fetch_assoc($result))
 		{
 
-			$statut= "admin";
+			if($IDhumainA == $data2['Humain'])
+			{
+
+				$statut= "admin";
+				setcookie('IDhumain',$IDhumainA);
+
+			}
 		}
 	}
+	
 	
 	setcookie('login',$login);
 	setcookie('mdp',$mdp);
 	setcookie('statut',$statut);
-	setcookie('IDhumain',$IDhumain);
+	echo $statut;
+	if($statut == '')
+	{
+		header("Location: Front/connexion.php");
+	}
+	else
+	{
+		header("Location: Front/Acceuil.php");
 
-
-	header("Location: Front/Acceuil.php");
+	}
 }
 
 ?>
